@@ -1,0 +1,8 @@
+# Core
+plotly==5.18.0
+pandas==2.1.4
+
+# Para futuro (comentados por enquanto)
+# netmiko==4.3.0
+# paramiko==3.4.0
+# requests==2.31.0
