@@ -12,6 +12,11 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 - README com roadmap
 - Configuração de ambiente Python
 
+- Gráfico de linha para visualização de progresso semanal - 2025-10-12
+  - Versão limpa (`01_line_chart.py`)
+  - Versão comentada para aprendizado (`01_line_chart_commented.py`)
+  - Output HTML interativo gerado
+
 Changelog
 Todas as mudanças notáveis neste projeto serão documentadas aqui.
 O formato é baseado em Keep a Changelog,
