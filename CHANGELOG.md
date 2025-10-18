@@ -8,6 +8,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 
 ### Added
 
+[0.1.0] - 2025-10-08
+
 - Estrutura inicial do projeto
 - README com roadmap
 - Configuração de ambiente Python
@@ -17,21 +19,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
   - Versão comentada para aprendizado (`01_line_chart_commented.py`)
   - Output HTML interativo gerado
 
-Changelog
-Todas as mudanças notáveis neste projeto serão documentadas aqui.  
-O formato é baseado em Keep a Changelog,  
-e este projeto segue Semantic Versioning.  
-  
-[Unreleased]  
-Planejado  
-  
-- Gráficos interativos com filtros dropdown
-- Leitura automática do repositório CCNP principal
-- Dashboard de progresso por domínio ENCOR
-- Integração com scripts Netmiko/Paramiko
-
 [0.1.0] - 2025-10-12  
-Added  
 
 - Gráfico de linha para visualização de progresso semanal de labs CCNP
   
@@ -39,6 +27,32 @@ Added
   - Versão comentada (01_line_chart_commented.py) para aprendizado linha a linha
   - Output HTML interativo gerado em docs/01_line_chart.html
   - Configuração UTF-8 para suporte a caracteres especiais em português
+
+Changelog
+Todas as mudanças notáveis neste projeto serão documentadas aqui.  
+O formato é baseado em Keep a Changelog,  
+e este projeto segue Semantic Versioning.  
+
+[0.1.0] - 2025-10-12
+
+- Gráfico de barras para comparação de labs por domínio CCNP  
+  
+  - Versão limpa (`02_bar_chart.py`) para uso profissional
+  - Versão comentada (`02_bar_chart_commented.py`) com explicações linha a linha
+  - Output HTML interativo em `docs/02_bar_chart.html`
+  - Cores customizadas por categoria
+  - Hover tooltip personalizado
+
+---
+
+### Unreleased  
+
+Planejado  
+  
+- Gráficos interativos com filtros dropdown
+- Leitura automática do repositório CCNP principal
+- Dashboard de progresso por domínio ENCOR
+- Integração com scripts Netmiko/Paramiko
   
 Estrutura inicial do projeto com pastas organizadas (src/, data/, docs/, examples/)  
 Arquivo .gitignore para Python e ambientes virtuais  
@@ -60,8 +74,11 @@ Checklist de boas práticas
   
 Este CHANGELOG.md para documentação de versões  
 
+---
+
+### Changed
+
 [0.1.0] - 2025-10-18  
-Changed  
   
 - Melhorada formatação da seção "Estrutura do Projeto" no README.md  
   
