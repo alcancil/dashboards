@@ -102,6 +102,18 @@ Os gráficos são salvos na pasta docs/ como arquivos HTML interativos.
   
 ---  
 
+## 🌐 Visualização Online
+
+Os gráficos estão disponíveis online via GitHub Pages:
+
+- [Gráfico de Linha - Progresso Semanal](https://alcancil.github.io/dashboards/01_line_chart.html)
+- [Gráfico de Barras - Domínios CCNP](https://alcancil.github.io/dashboards/02_bar_chart.html)
+- [Gráfico de Pizza - Distribuição por Categoria](https://alcancil.github.io/dashboards/03_pie_chart.html)
+
+**Base URL:** https://alcancil.github.io/dashboards/  
+
+---
+
 ## 📚 Descrição dos Arquivos
 
 **Arquivos de Configuração**  
@@ -182,10 +194,10 @@ chore(deps): update plotly to 5.18.0
 ✅ **Fase 1: Fundamentos (Semana 1) - EM ANDAMENTO**  
   
 ✓ Setup do projeto e estrutura de pastas  
-⎕ Documentação inicial (README, CHANGELOG, Git Guide)  
-⎕ Gráfico de linha (versões limpa e comentada)  
-⎕ Gráfico de barras (versões limpa e comentada)  
-⎕ Gráfico de pizza (versões limpa e comentada)  
+✓ Documentação inicial (README, CHANGELOG, Git Guide)  
+✓ Gráfico de linha (versões limpa e comentada)  
+✓ Gráfico de barras (versões limpa e comentada)  
+✓ Gráfico de pizza (versões limpa e comentada)  
 ⎕ Dashboard MVP com 4 gráficos  
 
 📅 **Fase 2: Intermediário (Semana 2) - PLANEJADO**  

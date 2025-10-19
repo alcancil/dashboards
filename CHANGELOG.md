@@ -4,7 +4,56 @@ Todas as mudanças notáveis serão documentadas aqui.
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## Unreleased
+
+[0.1.0] - 2025-10-08  
+
+Planejado  
+  
+- Gráficos interativos com filtros dropdown
+- Leitura automática do repositório CCNP principal
+- Dashboard de progresso por domínio ENCOR
+- Integração com scripts Netmiko/Paramiko
+
+- Estrutura inicial do projeto com pastas organizadas (src/, data/, docs/, examples/)  
+- Arquivo .gitignore para Python e ambientes virtuais  
+- requirements.txt com dependências (Plotly 5.18.0, Pandas 2.1.4)  
+- README.md com documentação completa do projeto  
+  
+- Descrição de objetivos  
+- Estrutura detalhada de pastas e arquivos  
+- Instruções de instalação  
+- Guia de uso básico  
+- Roadmap de desenvolvimento  
+  
+- Guia de commits profissionais em docs/GIT_COMMIT_GUIDE.md  
+  
+- Conventional Commits completo  
+- Exemplos práticos por situação  
+- Templates de mensagens  
+- Checklist de boas práticas  
+  
+- Este CHANGELOG.md para documentação de versões 
+
+---
+
+### Infrastructure
+
+[0.1.0] - 2025-10-08  
+
+Repositório Git inicializado com estrutura profissional  
+Configuração de versionamento semântico  
+Documentação modular e organizada em subdiretórios  
+Estabelecido padrão de duas versões para cada script (limpa + comentada) 
+
+[0.1.0] - 2025-10-00  
+
+- Configurado GitHub Pages para visualização online dos dashboards
+  - URL base: https://alcancil.github.io/dashboards/
+  - Hospedagem a partir da pasta `/docs`
+  - Gráficos acessíveis publicamente via navegador
+
+---
 
 ### Added
 
@@ -50,40 +99,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
   
 ---
 
-### Unreleased  
-
-Planejado  
-  
-- Gráficos interativos com filtros dropdown
-- Leitura automática do repositório CCNP principal
-- Dashboard de progresso por domínio ENCOR
-- Integração com scripts Netmiko/Paramiko
-  
-Estrutura inicial do projeto com pastas organizadas (src/, data/, docs/, examples/)  
-Arquivo .gitignore para Python e ambientes virtuais  
-requirements.txt com dependências (Plotly 5.18.0, Pandas 2.1.4)  
-README.md com documentação completa do projeto  
-  
-Descrição de objetivos  
-Estrutura detalhada de pastas e arquivos  
-Instruções de instalação  
-Guia de uso básico  
-Roadmap de desenvolvimento  
-  
-Guia de commits profissionais em docs/GIT_COMMIT_GUIDE.md  
-  
-Conventional Commits completo  
-Exemplos práticos por situação  
-Templates de mensagens  
-Checklist de boas práticas  
-  
-Este CHANGELOG.md para documentação de versões  
-
----
-
 ### Changed
 
-[0.1.0] - 2025-10-18  
+[0.1.0] - 2025-10-08  
   
 - Melhorada formatação da seção "Estrutura do Projeto" no README.md  
   
@@ -92,17 +110,20 @@ Este CHANGELOG.md para documentação de versões
   - Corrigida formatação de blocos de código Markdown
   - Atualizadas métricas de progresso do projeto
 
-Infrastructure  
+---
 
-Repositório Git inicializado com estrutura profissional  
-Configuração de versionamento semântico  
-Documentação modular e organizada em subdiretórios  
-Estabelecido padrão de duas versões para cada script (limpa + comentada) 
-  
-Documentation  
-  
-README principal com 200+ linhas de documentação  
-Guia de commits com exemplos práticos e templates  
-Estrutura de documentação separada em docs/  
-Links entre documentos para fácil navegação  
-Comentários linha a linha em scripts didáticos  
+## Documentation  
+
+[0.1.0] - 2025-10-18  
+
+- README principal com 200+ linhas de documentação  
+- Guia de commits com exemplos práticos e templates  
+- Estrutura de documentação separada em docs/  
+- Links entre documentos para fácil navegação  
+- Comentários linha a linha em scripts didáticos  
+
+[0.1.0] - 2025-10-18  
+
+- Adicionada seção "Visualização Online" no README.md
+  - Links diretos para cada gráfico hospedado
+  - Instruções de acesso aos dashboards online
