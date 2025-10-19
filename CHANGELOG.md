@@ -1,6 +1,6 @@
 # Changelog
 
-Todas as mudanças notáveis serão documentadas aqui.
+Todas as mudanças notáveis serão documentadas aqui.  
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
 
@@ -27,12 +27,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
   - Versão comentada (01_line_chart_commented.py) para aprendizado linha a linha
   - Output HTML interativo gerado em docs/01_line_chart.html
   - Configuração UTF-8 para suporte a caracteres especiais em português
-
-Changelog
-Todas as mudanças notáveis neste projeto serão documentadas aqui.  
-O formato é baseado em Keep a Changelog,  
-e este projeto segue Semantic Versioning.  
-
+  
 [0.1.0] - 2025-10-12
 
 - Gráfico de barras para comparação de labs por domínio CCNP  
@@ -43,6 +38,16 @@ e este projeto segue Semantic Versioning.
   - Cores customizadas por categoria
   - Hover tooltip personalizado
 
+[0.1.0] - 2025-10-12  
+
+- Gráfico de pizza (donut) para visualização de distribuição de labs por categoria
+  - Versão limpa (`03_pie_chart.py`) para uso profissional
+  - Versão comentada (`03_pie_chart_commented.py`) com explicações detalhadas
+  - Output HTML interativo em `docs/03_pie_chart.html`
+  - Estilo donut com anotação de total no centro
+  - Cálculo automático de percentuais pelo Plotly
+  - Demonstra posicionamento customizado de legenda  
+  
 ---
 
 ### Unreleased  
