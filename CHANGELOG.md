@@ -1,129 +1,117 @@
 # Changelog
 
-Todas as mudanças notáveis serão documentadas aqui.  
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
-Formato baseado em [Keep a Changelog](https://keepachangelog.com/).
+O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
+e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
-## Unreleased
+## [Unreleased]
 
-[0.1.0] - 2025-10-08  
+### Em Desenvolvimento
 
-Planejado  
-  
-- Gráficos interativos com filtros dropdown
-- Leitura automática do repositório CCNP principal
-- Dashboard de progresso por domínio ENCOR
-- Integração com scripts Netmiko/Paramiko
+- Gráfico scatter para análise de latência vs perda de pacotes
+- Heatmap de utilização de dispositivos ao longo do tempo
+- Gauge de medidor de banda (velocímetro)
+- Timeline de janelas de manutenção
+- Integração com dados reais via SNMP/SSH
+- Filtros dropdown interativos
+- Dashboard de progresso CCNP ENCOR por domínio
 
-- Estrutura inicial do projeto com pastas organizadas (src/, data/, docs/, examples/)  
-- Arquivo .gitignore para Python e ambientes virtuais  
-- requirements.txt com dependências (Plotly 5.18.0, Pandas 2.1.4)  
-- README.md com documentação completa do projeto  
-  
-- Descrição de objetivos  
-- Estrutura detalhada de pastas e arquivos  
-- Instruções de instalação  
-- Guia de uso básico  
-- Roadmap de desenvolvimento  
-  
-- Guia de commits profissionais em docs/GIT_COMMIT_GUIDE.md  
-  
-- Conventional Commits completo  
-- Exemplos práticos por situação  
-- Templates de mensagens  
-- Checklist de boas práticas  
-  
-- Este CHANGELOG.md para documentação de versões 
+## [0.2.0] - 2025-10-19
 
----
+### Adicionado
 
-### Infrastructure
+- Dashboard MVP com 4 gráficos integrados de monitoramento de rede
+  - Gráfico de linha: Tráfego de rede nas últimas 24 horas
+  - Gráfico de barras agrupadas: Status de interfaces por switch (UP/DOWN)
+  - Gráfico de pizza (donut): Distribuição de dispositivos por VLAN
+  - Gráfico de barras horizontais: Utilização de CPU com cores dinâmicas
+- Arquivo `04_dashboard_mvp.py` (versão limpa e profissional)
+- Arquivo `04_dashboard_mvp_commented.py` (versão didática com comentários linha a linha)
+- Guia de Versionamento Semântico em `docs/versioning_guide.md`
+  - Explicação completa de MAJOR, MINOR e PATCH
+  - Fluxograma de decisão de versão
+  - Exemplos práticos e checklist
+- Sistema de cores dinâmicas baseadas em thresholds de CPU:
+  - Verde: < 50% (operação normal)
+  - Laranja: 50-70% (atenção necessária)
+  - Vermelho: > 70% (estado crítico)
+- Posicionamento manual de gráfico de pizza usando `domain`
+- Timestamp de atualização automática no rodapé do dashboard
+- Estatísticas calculadas automaticamente:
+  - Total de dispositivos monitorados
+  - Total de interfaces (UP + DOWN)
+  - Quantidade de dispositivos em estado crítico
 
-[0.1.0] - 2025-10-08  
+### Alterado
 
-Repositório Git inicializado com estrutura profissional  
-Configuração de versionamento semântico  
-Documentação modular e organizada em subdiretórios  
-Estabelecido padrão de duas versões para cada script (limpa + comentada) 
+- Estrutura de subplots utilizando `specs` com tipo 'xy' para todos os gráficos
+- Modo de barras alterado de 'stack' (empilhadas) para 'group' (agrupadas lado a lado)
+- Espaçamento horizontal aumentado de 0.12 para 0.25 para melhor visualização
+- Altura do dashboard ajustada de 900px para 950px
+- Método de posicionamento da pizza: de automático para manual via `domain`
 
-[0.1.0] - 2025-10-00  
+### Corrigido
 
-- Configurado GitHub Pages para visualização online dos dashboards
+- Erro de renderização de gráficos em branco no dashboard
+- Conflito entre `add_vline()` e gráficos de pizza em subplots
+- Sobreposição de textos, legendas e títulos dos gráficos
+- Problema com `specs` usando tipos incompatíveis ('scatter', 'bar', 'pie')
+
+## [0.1.0] - 2025-10-12
+
+### Adicionado
+
+- Estrutura inicial do projeto com organização profissional
+- Documentação inicial completa:
+  - `README.md` com descrição detalhada do projeto
+  - `CHANGELOG.md` para rastreamento de mudanças
+  - `docs/git_commit_guide.md` com padrões de commits profissionais
+- Configuração de ambiente:
+  - Arquivo `.gitignore` configurado para projetos Python
+  - Arquivo `requirements.txt` com dependências (Plotly 5.18.0, Pandas 2.1.4)
+  - Suporte a UTF-8 para caracteres especiais em português
+- GitHub Pages configurado para visualização online
   - URL base: https://alcancil.github.io/dashboards/
   - Hospedagem a partir da pasta `/docs`
-  - Gráficos acessíveis publicamente via navegador
 
----
+#### Gráficos Implementados
 
-### Added
+##### Gráfico 01 - Linha (Line Chart)
 
-[0.1.0] - 2025-10-08
+- Visualização de progresso semanal de labs CCNP
+- Versão limpa: `01_line_chart.py`
+- Versão comentada: `01_line_chart_commented.py`
+- Output: `docs/01_line_chart.html`
 
-- Estrutura inicial do projeto
-- README com roadmap
-- Configuração de ambiente Python
+##### Gráfico 02 - Barras (Bar Chart)
 
-- Gráfico de linha para visualização de progresso semanal - 2025-10-12
-  - Versão limpa (`01_line_chart.py`)
-  - Versão comentada para aprendizado (`01_line_chart_commented.py`)
-  - Output HTML interativo gerado
+- Comparação de quantidade de labs por domínio CCNP
+- Versão limpa: `02_bar_chart.py`
+- Versão comentada: `02_bar_chart_commented.py`
+- Output: `docs/02_bar_chart.html`
 
-[0.1.0] - 2025-10-12  
+##### Gráfico 03 - Pizza/Donut (Pie Chart)
 
-- Gráfico de linha para visualização de progresso semanal de labs CCNP
-  
-  - Versão limpa (01_line_chart.py) para uso profissional
-  - Versão comentada (01_line_chart_commented.py) para aprendizado linha a linha
-  - Output HTML interativo gerado em docs/01_line_chart.html
-  - Configuração UTF-8 para suporte a caracteres especiais em português
-  
-[0.1.0] - 2025-10-12
+- Distribuição percentual de labs por categoria
+- Versão limpa: `03_pie_chart.py`
+- Versão comentada: `03_pie_chart_commented.py`
+- Output: `docs/03_pie_chart.html`
 
-- Gráfico de barras para comparação de labs por domínio CCNP  
-  
-  - Versão limpa (`02_bar_chart.py`) para uso profissional
-  - Versão comentada (`02_bar_chart_commented.py`) com explicações linha a linha
-  - Output HTML interativo em `docs/02_bar_chart.html`
-  - Cores customizadas por categoria
-  - Hover tooltip personalizado
+### Infraestrutura
 
-[0.1.0] - 2025-10-12  
+- Repositório Git inicializado com estrutura profissional
+- Versionamento semântico estabelecido (SemVer)
+- Documentação modular organizada em subdiretórios
+- Padrão de duas versões para cada script (limpa + comentada)
 
-- Gráfico de pizza (donut) para visualização de distribuição de labs por categoria
-  - Versão limpa (`03_pie_chart.py`) para uso profissional
-  - Versão comentada (`03_pie_chart_commented.py`) com explicações detalhadas
-  - Output HTML interativo em `docs/03_pie_chart.html`
-  - Estilo donut com anotação de total no centro
-  - Cálculo automático de percentuais pelo Plotly
-  - Demonstra posicionamento customizado de legenda  
-  
----
+## Convenções
 
-### Changed
+### Tipos de Mudanças
 
-[0.1.0] - 2025-10-08  
-  
-- Melhorada formatação da seção "Estrutura do Projeto" no README.md  
-  
-  - Corrigido espaçamento na árvore de diretórios
-  - Reorganizadas descrições de pastas para melhor legibilidade
-  - Corrigida formatação de blocos de código Markdown
-  - Atualizadas métricas de progresso do projeto
-
----
-
-## Documentation  
-
-[0.1.0] - 2025-10-18  
-
-- README principal com 200+ linhas de documentação  
-- Guia de commits com exemplos práticos e templates  
-- Estrutura de documentação separada em docs/  
-- Links entre documentos para fácil navegação  
-- Comentários linha a linha em scripts didáticos  
-
-[0.1.0] - 2025-10-18  
-
-- Adicionada seção "Visualização Online" no README.md
-  - Links diretos para cada gráfico hospedado
-  - Instruções de acesso aos dashboards online
+- **Adicionado** - para novas funcionalidades
+- **Alterado** - para mudanças em funcionalidades existentes
+- **Descontinuado** - para funcionalidades que serão removidas
+- **Removido** - para funcionalidades removidas
+- **Corrigido** - para correções de bugs
+- **Segurança** - para vulnerabilidades corrigidas  
