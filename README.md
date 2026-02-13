@@ -198,8 +198,8 @@ chore(deps): update plotly to 5.18.0
 ✓ Documentação inicial (README, CHANGELOG, Git Guide)  
 ✓ Gráfico de linha (versões limpa e comentada)  
 ✓ Gráfico de barras (versões limpa e comentada)  
-✓ Gráfico de pizza (versões limpa e comentada)
-✓ Dashboard MVP com 4 gráficos ⭐
+✓ Gráfico de pizza (versões limpa e comentada)  
+✓ Dashboard MVP com 4 gráficos ⭐  
 ✓ Guia de Versionamento Semântico ⭐  
   
 **Status:** 7/7 completo (100%) ✅  
