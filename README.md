@@ -109,6 +109,7 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico de Linha - Progresso Semanal](https://alcancil.github.io/dashboards/01_line_chart.html)
 - [Gráfico de Barras - Domínios CCNP](https://alcancil.github.io/dashboards/02_bar_chart.html)
 - [Gráfico de Pizza - Distribuição por Categoria](https://alcancil.github.io/dashboards/03_pie_chart.html)
+- [Dashboard MVP - Monitoramento de Rede**](https://alcancil.github.io/dashboards/04_dashboard_mvp.html) ⭐ **NOVO**
 
 **Base URL:** https://alcancil.github.io/dashboards/  
 
@@ -191,14 +192,19 @@ chore(deps): update plotly to 5.18.0
 
 ## 🗓️ Roadmap
 
-✅ **Fase 1: Fundamentos (Semana 1) - EM ANDAMENTO**  
+✅ **Fase 1: Fundamentos (Semana 1)**  
   
 ✓ Setup do projeto e estrutura de pastas  
 ✓ Documentação inicial (README, CHANGELOG, Git Guide)  
 ✓ Gráfico de linha (versões limpa e comentada)  
 ✓ Gráfico de barras (versões limpa e comentada)  
-✓ Gráfico de pizza (versões limpa e comentada)  
-⎕ Dashboard MVP com 4 gráficos  
+✓ Gráfico de pizza (versões limpa e comentada)
+✓ Dashboard MVP com 4 gráficos ⭐
+✓ Guia de Versionamento Semântico ⭐  
+  
+**Status:** 7/7 completo (100%) ✅  
+**Versão:** v0.2.0
+**Data de conclusão:** 12/02/2026
 
 📅 **Fase 2: Intermediário (Semana 2) - PLANEJADO**  
 
