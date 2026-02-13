@@ -208,10 +208,20 @@ chore(deps): update plotly to 5.18.0
 
 📅 **Fase 2: Intermediário (Semana 2) - PLANEJADO**  
 
+✓ Gráfico scatter ( dispersão - latência vs perda de pacotes) ⭐
+✓ Heatmap (utilização de dispositivos ao longo do tempo)
+✓ Gauge (medidor de banda - velocímetro)
+✓ Timeline (janelas de manutenção)
+✓ Dashboard intermediário com filtros interativos
 ⎕ Gráficos interativos (filtros, zoom, seleção)  
 ⎕ Leitura automática do repositório CCNP  
 ⎕ Dashboard de progresso por domínio  
-⎕ Integração com dados CSV/JSON  
+⎕ Integração com dados CSV/JSON 
+
+**Status:** 1/5 completo (20%) 🔄  
+**Versão atual:** v0.3.0  
+**Versão esperada:** v0.3.0 - v0.7.0  
+**Previsão:** Semanas 2-4
   
 📅 **Fase 3: Avançado (Semana 3) - PLANEJADO**
   
@@ -231,10 +241,10 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 2          |
-| Gráficos gerados      | 1          |
+| Scripts criados       | 15         |
+| Gráficos gerados      | 5          |
 | Commits profissionais | 5          |
-| Última atualização    | 12/10/2025 |
+| Última atualização    | 13/02/2026 |
 
 ---
 
