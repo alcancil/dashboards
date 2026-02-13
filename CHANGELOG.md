@@ -7,6 +7,12 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ## [Unreleased]
 
+### Alterado - 2026-12-02
+
+- Fase 1 do roadmap marcada como 100% concluída
+- Atualizado README.md com link para Dashboard MVP na visualização online
+- Reorganizado roadmap com status detalhado de cada fase
+
 ### Em Desenvolvimento
 
 - Gráfico scatter para análise de latência vs perda de pacotes
