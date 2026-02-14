@@ -1,4 +1,4 @@
-# Changelog
+## Changelog
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
@@ -7,7 +7,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ## [Unreleased]
 
-### Em Desenvolvimento 13-02-2025
+### Em Desenvolvimento
 
 - Heatmap de utilização de dispositivos ao longo do tempo
 - Gauge de medidor de banda (velocímetro)
@@ -19,7 +19,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
-## [0.3.0] - 13-02-2025
+## [0.3.0] - 2025-10-20
 
 ### Adicionado
 
@@ -51,22 +51,6 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Variações possíveis (linha de tendência, zonas coloridas, escala logarítmica)
 
 ---
-
-### Alterado - 12-02-2026
-
-- Fase 1 do roadmap marcada como 100% concluída
-- Atualizado README.md com link para Dashboard MVP na visualização online
-- Reorganizado roadmap com status detalhado de cada fase
-
-### Em Desenvolvimento
-
-- Gráfico scatter para análise de latência vs perda de pacotes
-- Heatmap de utilização de dispositivos ao longo do tempo
-- Gauge de medidor de banda (velocímetro)
-- Timeline de janelas de manutenção
-- Integração com dados reais via SNMP/SSH
-- Filtros dropdown interativos
-- Dashboard de progresso CCNP ENCOR por domínio
 
 ## [0.2.0] - 2025-10-19
 
@@ -101,6 +85,9 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Espaçamento horizontal aumentado de 0.12 para 0.25 para melhor visualização
 - Altura do dashboard ajustada de 900px para 950px
 - Método de posicionamento da pizza: de automático para manual via `domain`
+- Fase 1 do roadmap marcada como 100% concluída
+- README.md atualizado com link para Dashboard MVP na visualização online
+- Roadmap reorganizado com status detalhado de cada fase
 
 ### Corrigido
 
@@ -108,6 +95,8 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Conflito entre `add_vline()` e gráficos de pizza em subplots
 - Sobreposição de textos, legendas e títulos dos gráficos
 - Problema com `specs` usando tipos incompatíveis ('scatter', 'bar', 'pie')
+
+---
 
 ## [0.1.0] - 2025-10-12
 
@@ -156,6 +145,8 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - Documentação modular organizada em subdiretórios
 - Padrão de duas versões para cada script (limpa + comentada)
 
+---
+
 ## Convenções
 
 ### Tipos de Mudanças
@@ -166,3 +157,4 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - **Removido** - para funcionalidades removidas
 - **Corrigido** - para correções de bugs
 - **Segurança** - para vulnerabilidades corrigidas  
+  
