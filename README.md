@@ -109,9 +109,11 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico de Linha - Progresso Semanal](https://alcancil.github.io/dashboards/01_line_chart.html)
 - [Gráfico de Barras - Domínios CCNP](https://alcancil.github.io/dashboards/02_bar_chart.html)
 - [Gráfico de Pizza - Distribuição por Categoria](https://alcancil.github.io/dashboards/03_pie_chart.html)
-- [Dashboard MVP - Monitoramento de Rede**](https://alcancil.github.io/dashboards/04_dashboard_mvp.html) ⭐ **NOVO**
+- [Dashboard MVP - Monitoramento de Rede**](https://alcancil.github.io/dashboards/04_dashboard_mvp.html)
+- [Gráfico Scatter (Dispersão) - latência (ms) vs perda de pacotes (%)](https://alcancil.github.io/dashboards/05_scatter_latency.html) ⭐ **NOVO**  
+- [Gráfico Heatmap - Utilização de Dispositivos 24h](https://alcancil.github.io/dashboards/06_heatmap_devices.html) ⭐ **NOVO**
 
-**Base URL:** https://alcancil.github.io/dashboards/  
+**Base URL:** <https://alcancil.github.io/dashboards/>  
 
 ---
 
@@ -208,18 +210,18 @@ chore(deps): update plotly to 5.18.0
 
 📅 **Fase 2: Intermediário (Semana 2) - PLANEJADO**  
 
-✓ Gráfico scatter ( dispersão - latência vs perda de pacotes) ⭐
-✓ Heatmap (utilização de dispositivos ao longo do tempo)
-✓ Gauge (medidor de banda - velocímetro)
-✓ Timeline (janelas de manutenção)
-✓ Dashboard intermediário com filtros interativos
+✓ Gráfico scatter ( dispersão - latência vs perda de pacotes)  
+✓ Heatmap (utilização de dispositivos ao longo do tempo) ⭐  
+⎕ Gauge (medidor de banda - velocímetro)  
+⎕ Timeline (janelas de manutenção)  
+⎕ Dashboard intermediário com filtros interativos  
 ⎕ Gráficos interativos (filtros, zoom, seleção)  
 ⎕ Leitura automática do repositório CCNP  
 ⎕ Dashboard de progresso por domínio  
-⎕ Integração com dados CSV/JSON 
+⎕ Integração com dados CSV/JSON  
 
-**Status:** 1/5 completo (20%) 🔄  
-**Versão atual:** v0.3.0  
+**Status:** 2/5 completo (40%) 🔄  
+**Versão atual:** v0.4.0  
 **Versão esperada:** v0.3.0 - v0.7.0  
 **Previsão:** Semanas 2-4
   
@@ -241,7 +243,7 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 15         |
+| Scripts criados       | 16         |
 | Gráficos gerados      | 5          |
 | Commits profissionais | 5          |
 | Última atualização    | 13/02/2026 |
@@ -276,7 +278,7 @@ Você é livre para usar, modificar e distribuir este projeto.
   
 - GitHub: @alcancil
 - LinkedIn: alexandre-analista-de-ti
-- Email: alcancil@gmail.com
+- Email: <alcancil@gmail.com>
 
 ### 🔗 Repositório Principal
 

@@ -9,13 +9,50 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Heatmap de utilização de dispositivos ao longo do tempo
 - Gauge de medidor de banda (velocímetro)
 - Timeline de janelas de manutenção
 - Dashboard intermediário com filtros interativos
 - Integração com dados reais via SNMP/SSH
 - Filtros dropdown interativos
 - Dashboard de progresso CCNP ENCOR por domínio
+
+---
+
+## [0.4.0] - 2025-10-20
+
+### Adicionado
+
+- **Gráfico Heatmap** para visualização de utilização de dispositivos ao longo de 24h
+  - Implementa mapa de calor com matriz 10x24 (10 dispositivos, 24 horas)
+  - Escala de cores customizada (verde → laranja → vermelho)
+  - Padrões realistas de utilização por horário:
+    - Madrugada (00-06h): uso baixo (10-25%)
+    - Horário comercial (09-18h): uso alto (50-85%)
+    - Noite (21-24h): uso médio (15-35%)
+  - Ajustes por tipo de dispositivo:
+    - Firewalls: maior utilização (+10-20%)
+    - Roteadores Core: alta utilização (+5-15%)
+    - Switches de Acesso: utilização variável (+0-10%)
+  - Valores exibidos em cada célula (opcional)
+  - Colorbar com título e marcações a cada 20%
+  - Anotações de zonas de horário (Madrugada, Comercial, Noite)
+  - Estatísticas calculadas (máxima, mínima, média)
+- Arquivo `06_heatmap_devices.py` (versão limpa)
+- Arquivo `06_heatmap_devices_commented.py` (versão didática com comentários linha a linha)
+- Segundo gráfico da **Fase 2 - Gráficos Intermediários** (40% completo)
+
+### Alterado
+
+- README.md atualizado com link para o novo gráfico heatmap
+- Roadmap da Fase 2 marcado como 40% completo (2/5 tarefas)
+
+### Documentação
+
+- Comentários detalhados sobre mapas de calor
+- Exemplos de padrões temporais em dispositivos de rede
+- Explicação de matrizes bidimensionais e visualização de intensidade
+- Variações possíveis (escalas de cores, orientação, zonas destacadas)
+- Aplicações práticas em NOC e análise de capacidade
 
 ---
 
