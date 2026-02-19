@@ -16,45 +16,77 @@ Este repositório documenta minha jornada de aprendizado prático, combinando tr
 ```bash
 dashboards/
 │
-├── src/                           # Código-fonte organizado por nível
+├── src/                                    # Código-fonte organizado por nível
 │   │
-│   ├── basico/                    # 📘 Exemplos básicos Plotly
+│   ├── basico/                             # 📘 Gráficos básicos e fundamentos
 │   │   ├── 01_line_chart.py                # Gráfico de linha (limpo)
 │   │   ├── 01_line_chart_commented.py      # Gráfico de linha (comentado)
 │   │   ├── 02_bar_chart.py                 # Gráfico de barras (limpo)
 │   │   ├── 02_bar_chart_commented.py       # Gráfico de barras (comentado)
-│   │   └── README.md                       # Documentação dos exemplos
+│   │   ├── 03_pie_chart.py                 # Gráfico de pizza (limpo)
+│   │   ├── 03_pie_chart_commented.py       # Gráfico de pizza (comentado)
+│   │   ├── 04_dashboard_mvp.py             # Dashboard MVP (limpo)
+│   │   └── 04_dashboard_mvp_commented.py   # Dashboard MVP (comentado)
 │   │
-│   ├── intermediario/             # 📗 Gráficos intermediários
-│   │   ├── 05_interactive.py               # Gráficos com filtros/zoom
-│   │   ├── 06_auto_reader.py               # Leitura automática de dados
-│   │   └── 07_ccnp_progress.py             # Dashboard de progresso CCNP
+│   ├── intermediario/                      # 📗 Gráficos intermediários
+│   │   ├── 05_scatter_latency.py           # Scatter: latência vs perda
+│   │   ├── 05_scatter_latency_commented.py # Scatter (comentado)
+│   │   ├── 06_heatmap_devices.py           # Heatmap: utilização 24h
+│   │   └── 06_heatmap_devices_commented.py # Heatmap (comentado)
 │   │
-│   └── avancado/                  # 📕 Dashboard completo
-│       ├── 08_full_dashboard.py            # Dashboard final integrado
-│       ├── 09_kpi_metrics.py               # Métricas e KPIs de negócio
-│       └── 10_netmiko_integration.py       # Integração com scripts
+│   └── avancado/                           # 📕 Dashboards avançados (futuro)
+│       └── (em desenvolvimento)
 │
-├── data/                          # 📊 Dados dos labs
-│   ├── ccnp_labs.json                      # Contagem de labs por domínio
-│   ├── weekly_progress.csv                 # Progresso semanal
-│   └── file_stats.json                     # Estatísticas de arquivos
+├── data/                                   # 📊 Dados para processamento (futuro)
 │
-├── docs/                          # 📄 Outputs HTML e documentação
-│   ├── 01_line_chart.html                  # Gráfico de linha (saída)
-│   ├── 02_bar_chart.html                   # Gráfico de barras (saída)
-│   └── GIT_COMMIT_GUIDE.md                 # Guia de commits profissionais
+├── docs/                                   # 📄 Outputs HTML e documentação
+│   ├── 01_line_chart.html                  # Output: Gráfico de linha
+│   ├── 02_bar_chart.html                   # Output: Gráfico de barras
+│   ├── 03_pie_chart.html                   # Output: Gráfico de pizza
+│   ├── 04_dashboard_mvp.html               # Output: Dashboard MVP
+│   ├── 05_scatter_latency.html             # Output: Scatter plot
+│   ├── 06_heatmap_devices.html             # Output: Mapa de calor
+│   ├── git_commit_guide.md                 # Guia de commits profissionais
+│   ├── guia_versionamento.md               # Guia de versionamento semântico
+│   └── .nojekyll                           # Configuração GitHub Pages
 │
-├── examples/                      # 💡 Exemplos de uso e tutoriais
-│   └── how_to_run.md                       # Guia de execução
+├── exemplos/                               # 💡 Exemplos de uso (futuro)
 │
-├── tests/                         # 🧪 Testes (futuro)
+├── testes/                                 # 🧪 Testes automatizados (futuro)
 │
-├── .gitignore                     # Arquivos ignorados pelo Git
-├── requirements.txt               # Dependências Python
-├── CHANGELOG.md                   # Histórico de mudanças
-└── README.md                      # Este arquivo
+├── .gitignore                              # Arquivos ignorados pelo Git
+├── requerimentos.txt                       # Dependências Python (Plotly, Pandas)
+├── CHANGELOG.md                            # Histórico de versões e mudanças
+└── README.md                               # Este arquivo - Documentação principal
 ```
+
+### 📊 Gráficos Disponíveis
+
+#### Fase 1 - Básicos (✅ Concluída)
+
+| #  | Tipo      | Arquivo               | Descrição                           |
+|----|-----------|-----------------------|-------------------------------------|
+| 01 | Linha     | `01_line_chart.py`    | Evolução temporal de progresso      |
+| 02 | Barras    | `02_bar_chart.py`     | Comparação entre categorias         |
+| 03 | Pizza     | `03_pie_chart.py`     | Distribuição percentual             |
+| 04 | Dashboard | `04_dashboard_mvp.py` | Dashboard com 4 gráficos integrados |
+
+#### Fase 2 - Intermediários (🚧 40% Completa)
+
+| #  | Tipo      | Arquivo                 | Descrição                      |
+|----|-----------|-------------------------|--------------------------------|
+| 05 | Scatter   | `05_scatter_latency.py` | Correlação latência vs perda   |
+| 06 | Heatmap   | `06_heatmap_devices.py` | Utilização de dispositivos 24h |
+| 07 | Gauge     | *(em desenvolvimento)*  | Medidor de banda               |
+| 08 | Timeline  | *(em desenvolvimento)*  | Janelas de manutenção          |
+| 09 | Dashboard | *(em desenvolvimento)*  | Dashboard intermediário        |
+
+### 🎨 Padrão de Organização
+
+Cada gráfico possui **duas versões**:
+
+- **Versão limpa** (`XX_nome.py`): Código profissional e conciso
+- **Versão comentada** (`XX_nome_commented.py`): Código didático com explicações linha a linha
 
 ## 📦 Instalação
 
@@ -216,17 +248,17 @@ chore(deps): update plotly to 5.18.0
 ⎕ Timeline (janelas de manutenção)  
 ⎕ Dashboard intermediário com filtros interativos  
 ⎕ Gráficos interativos (filtros, zoom, seleção)  
-⎕ Leitura automática do repositório CCNP  
-⎕ Dashboard de progresso por domínio  
-⎕ Integração com dados CSV/JSON  
 
-**Status:** 2/5 completo (40%) 🔄  
+**Status:** 2/6 completo (33%) 🔄  
 **Versão atual:** v0.4.0  
 **Versão esperada:** v0.3.0 - v0.7.0  
 **Previsão:** Semanas 2-4
   
 📅 **Fase 3: Avançado (Semana 3) - PLANEJADO**
-  
+
+⎕ Leitura automática do repositório CCNP  
+⎕ Dashboard de progresso por domínio  
+⎕ Integração com dados CSV/JSON
 ⎕ Dashboard completo com múltiplas páginas  
 ⎕ Métricas de negócio e KPIs  
 ⎕ Integração com scripts Netmiko/Paramiko  
@@ -243,10 +275,10 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 16         |
-| Gráficos gerados      | 5          |
-| Commits profissionais | 5          |
-| Última atualização    | 13/02/2026 |
+| Scripts criados       | 12         |
+| Gráficos gerados      | 6          |
+| Commits profissionais | 18         |
+| Última atualização    | 18/02/2026 |
 
 ---
 
