@@ -1,6 +1,7 @@
 # Core
 plotly==5.18.0
 pandas==2.1.4
+numpy>=1.24.0
 
 # Para futuro (comentados por enquanto)
 # netmiko==4.3.0

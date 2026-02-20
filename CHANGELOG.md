@@ -17,6 +17,47 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+## [0.6.0] - 2026-10-20
+
+### Adicionado
+
+- **Gráfico Timeline** para visualização de janelas de manutenção programadas
+  - Implementa diagrama de Gantt (cronograma) para 90 dias
+  - Monitora 10 dispositivos de infraestrutura crítica
+  - Gera ~25-30 manutenções distribuídas ao longo do tempo
+  - 5 tipos de manutenção com cores distintas:
+    - Upgrade Firmware (Azul)
+    - Backup Config (Verde)
+    - Análise Performance (Laranja)
+    - Manutenção Preventiva (Roxo)
+    - Substituição HW (Vermelho)
+  - Duração variável: 2-8 horas por manutenção
+  - Tooltips com data/hora de início e fim formatadas
+  - Agrupamento automático por dispositivo
+  - Grade temporal para fácil identificação de períodos
+  - Estatísticas exibidas (total, por tipo, período)
+- Arquivo `08_timeline_maintenance.py` (versão limpa)
+- Arquivo `08_timeline_maintenance_commented.py` (versão didática com comentários linha a linha)
+- Quarto gráfico da **Fase 2 - Gráficos Intermediários** (80% completo)
+- Dependência numpy adicionada ao projeto (requerida pelo figure_factory)
+
+### Alterado
+
+- README.md atualizado com link para o novo gráfico timeline
+- Roadmap da Fase 2 marcado como 80% completo (4/5 tarefas)
+- Arquivo `requerimentos.txt` atualizado com numpy>=1.24.0
+
+### Documentação
+
+- Comentários detalhados sobre gráficos Gantt/Timeline
+- Exemplos de planejamento de manutenções
+- Explicação de figure_factory e create_gantt()
+- Trabalho com datetime e timedelta
+- Variações possíveis (milestones, dependências, agrupamentos)
+- Aplicações práticas em change management e planejamento
+
+---
+
 ## [0.5.0] - 2026-02-20
 
 - **Gráfico Gauge** para monitoramento de utilização de banda em tempo real
