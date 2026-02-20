@@ -32,7 +32,9 @@ dashboards/
 │   │   ├── 05_scatter_latency.py           # Scatter: latência vs perda
 │   │   ├── 05_scatter_latency_commented.py # Scatter (comentado)
 │   │   ├── 06_heatmap_devices.py           # Heatmap: utilização 24h
-│   │   └── 06_heatmap_devices_commented.py # Heatmap (comentado)
+│   │   ├── 06_heatmap_devices_commented.py # Heatmap (comentado)
+│   │   ├── 07_gauge_bandwidth.py           # Gauge (Velocímetro) - Monitoramento de Banda (Limpo)       
+│   │   └── 07_gauge_bandwidth_commented.py # Gauge - Monitoramento de Banda (comentado)
 │   │
 │   └── avancado/                           # 📕 Dashboards avançados (futuro)
 │       └── (em desenvolvimento)
@@ -46,6 +48,7 @@ dashboards/
 │   ├── 04_dashboard_mvp.html               # Output: Dashboard MVP
 │   ├── 05_scatter_latency.html             # Output: Scatter plot
 │   ├── 06_heatmap_devices.html             # Output: Mapa de calor
+│   ├── 07_gauge_bandwidth.py               # Output: Velocímetro - Monitoramento de Banda
 │   ├── git_commit_guide.md                 # Guia de commits profissionais
 │   ├── guia_versionamento.md               # Guia de versionamento semântico
 │   └── .nojekyll                           # Configuração GitHub Pages
@@ -71,15 +74,16 @@ dashboards/
 | 03 | Pizza     | `03_pie_chart.py`     | Distribuição percentual             |
 | 04 | Dashboard | `04_dashboard_mvp.py` | Dashboard com 4 gráficos integrados |
 
-#### Fase 2 - Intermediários (🚧 40% Completa)
+#### Fase 2 - Intermediários (🚧 50% Completa)
 
-| #  | Tipo      | Arquivo                 | Descrição                      |
-|----|-----------|-------------------------|--------------------------------|
-| 05 | Scatter   | `05_scatter_latency.py` | Correlação latência vs perda   |
-| 06 | Heatmap   | `06_heatmap_devices.py` | Utilização de dispositivos 24h |
-| 07 | Gauge     | *(em desenvolvimento)*  | Medidor de banda               |
-| 08 | Timeline  | *(em desenvolvimento)*  | Janelas de manutenção          |
-| 09 | Dashboard | *(em desenvolvimento)*  | Dashboard intermediário        |
+| #  | Tipo                 | Arquivo                 | Descrição                      |
+|----|----------------------|-------------------------|--------------------------------|
+| 05 | Scatter              | `05_scatter_latency.py` | Correlação latência vs perda   |
+| 06 | Heatmap              | `06_heatmap_devices.py` | Utilização de dispositivos 24h |
+| 07 | Gauge                | `07_gauge_bandwidth.py` | Medidor de banda               |
+| 08 | Timeline             | *(em desenvolvimento)*  | Janelas de manutenção          |
+| 09 | Dashboard            | *(em desenvolvimento)*  | Dashboard intermediário        |
+| 10 | Gráficos interativos | *(em desenvolvimento)*  | filtros, zoom, seleção         |
 
 ### 🎨 Padrão de Organização
 
@@ -142,12 +146,13 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico de Barras - Domínios CCNP](https://alcancil.github.io/dashboards/02_bar_chart.html)
 - [Gráfico de Pizza - Distribuição por Categoria](https://alcancil.github.io/dashboards/03_pie_chart.html)
 - [Dashboard MVP - Monitoramento de Rede**](https://alcancil.github.io/dashboards/04_dashboard_mvp.html)
-- [Gráfico Scatter (Dispersão) - latência (ms) vs perda de pacotes (%)](https://alcancil.github.io/dashboards/05_scatter_latency.html) ⭐ **NOVO**  
-- [Gráfico Heatmap - Utilização de Dispositivos 24h](https://alcancil.github.io/dashboards/06_heatmap_devices.html) ⭐ **NOVO**
+- [Gráfico Scatter (Dispersão) - latência (ms) vs perda de pacotes (%)](https://alcancil.github.io/dashboards/05_scatter_latency.html)  
+- [Gráfico Heatmap - Utilização de Dispositivos 24h](https://alcancil.github.io/dashboards/06_heatmap_devices.html)  
+- [Gráfico Gauge - Monitoramento de Banda (velocímetro)](https://alcancil.github.io/dashboards/07_gauge_bandwidth.html) ⭐ **NOVO**
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
----
+---  
 
 ## 📚 Descrição dos Arquivos
 
@@ -233,8 +238,8 @@ chore(deps): update plotly to 5.18.0
 ✓ Gráfico de linha (versões limpa e comentada)  
 ✓ Gráfico de barras (versões limpa e comentada)  
 ✓ Gráfico de pizza (versões limpa e comentada)  
-✓ Dashboard MVP com 4 gráficos ⭐  
-✓ Guia de Versionamento Semântico ⭐  
+✓ Dashboard MVP com 4 gráficos  
+✓ Guia de Versionamento Semântico  
   
 **Status:** 7/7 completo (100%) ✅  
 **Versão:** v0.2.0
@@ -243,14 +248,14 @@ chore(deps): update plotly to 5.18.0
 📅 **Fase 2: Intermediário (Semana 2) - PLANEJADO**  
 
 ✓ Gráfico scatter ( dispersão - latência vs perda de pacotes)  
-✓ Heatmap (utilização de dispositivos ao longo do tempo) ⭐  
-⎕ Gauge (medidor de banda - velocímetro)  
+✓ Heatmap (utilização de dispositivos ao longo do tempo)  
+✓ Gauge (medidor de banda - velocímetro) ⭐  
 ⎕ Timeline (janelas de manutenção)  
 ⎕ Dashboard intermediário com filtros interativos  
 ⎕ Gráficos interativos (filtros, zoom, seleção)  
 
-**Status:** 2/6 completo (33%) 🔄  
-**Versão atual:** v0.4.0  
+**Status:** 3/6 completo (50%) 🔄  
+**Versão atual:** v0.5.0  
 **Versão esperada:** v0.3.0 - v0.7.0  
 **Previsão:** Semanas 2-4
   
@@ -275,12 +280,12 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 12         |
-| Gráficos gerados      | 6          |
-| Commits profissionais | 18         |
-| Última atualização    | 18/02/2026 |
+| Scripts criados       | 14         |
+| Gráficos gerados      | 7          |
+| Commits profissionais | 19         |
+| Última atualização    | 20/02/2026 |
 
----
+---  
 
 ## 🤝 Contribuindo
 
@@ -293,7 +298,7 @@ Este é um projeto de aprendizado pessoal, mas sugestões são bem-vindas!
 - Push para a branch **(git push origin feature/nova-funcionalidade)**
 - Abra um Pull Request
 
----
+---  
 
 ### 📝 Changelog
 

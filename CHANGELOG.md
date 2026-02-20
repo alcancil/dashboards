@@ -9,7 +9,6 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Gauge de medidor de banda (velocímetro)
 - Timeline de janelas de manutenção
 - Dashboard intermediário com filtros interativos
 - Integração com dados reais via SNMP/SSH
@@ -18,7 +17,46 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
-## [0.4.0] - 2025-10-20
+## [0.5.0] - 2026-02-20
+
+- **Gráfico Gauge** para monitoramento de utilização de banda em tempo real
+  - Implementa 4 medidores tipo velocímetro (gauges) em grid 2x2
+  - Monitora diferentes tipos de links:
+    - Link Principal (Internet): 1 Gbps
+    - Link Backup (MPLS): 500 Mbps
+    - Link Interno (Core): 10 Gbps
+    - Link VPN (Site-to-Site): 200 Mbps
+  - Zonas de cor automáticas:
+    - Verde (0-50%): uso normal
+    - Laranja (50-80%): atenção necessária
+    - Vermelho (80-100%): estado crítico
+  - Indicador delta comparando com referência de 80%
+  - Threshold visual em 90% (linha vermelha)
+  - Valor atual exibido em Mbps e percentual
+  - Número principal em destaque (40px)
+  - Anotação de capacidade total abaixo de cada gauge
+- Arquivo `07_gauge_bandwidth.py` (versão limpa)
+- Arquivo `07_gauge_bandwidth_commented.py` (versão didática com comentários linha a linha)
+- Terceiro gráfico da **Fase 2 - Gráficos Intermediários** (60% completo)
+
+### Alterado
+
+- README.md atualizado com link para o novo gráfico gauge
+- Roadmap da Fase 2 marcado como 60% completo (3/5 tarefas)
+- Estrutura do projeto atualizada com todos os arquivos atuais
+
+### Documentação
+
+- Comentários detalhados sobre gráficos tipo Indicator/Gauge
+- Exemplos de monitoramento em tempo real
+- Explicação de mode combinado (gauge+number+delta)
+- Configuração de zonas coloridas (steps)
+- Variações possíveis (bullet, cores dinâmicas, múltiplas zonas)
+- Aplicações práticas em NOC e dashboards de monitoramento
+
+---
+
+## [0.4.0] - 2026-02-18
 
 ### Adicionado
 
