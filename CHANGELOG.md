@@ -10,8 +10,58 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ### Em Desenvolvimento
 
 - Integração com dados reais via SNMP/SSH
-- Filtros dropdown interativos
 - Dashboard de progresso CCNP ENCOR por domínio
+
+---
+
+## [0.8.0] - 2026-02-22
+
+### Adicionado
+
+- **Gráfico Interativo** com Filtros Linkados para análise de latência e performance de links
+  - Dois subplots linkados em layout 60/40:
+    - **Scatter Plot (esquerda)**: latência vs perda de pacotes com 100 links simulados
+    - **Box Plot (direita)**: distribuição estatística de latência por tipo de link
+  - Tamanho dos pontos proporcional ao bandwidth do link (terceira dimensão visual)
+  - Zona de performance ótima destacada no scatter (< 50ms, < 2% perda)
+  - Três controles interativos implementados com Plotly puro (sem Dash):
+    - Dropdown (região): filtra dados em ambos os subplots simultaneamente
+    - Botões Toggle (tipo de link): mostra/oculta séries individualmente
+    - Range Slider (latência): ajusta faixa de latência visível no scatter
+- legendgroup vinculando scatter e box: clique na legenda oculta ambos
+- Características realistas por tipo de link:
+  - Fibra: 5-30ms latência, 0-1% perda, 500-1000 Mbps
+  - Wireless: 15-80ms latência, 0.5-5% perda, 50-300 Mbps
+  - MPLS: 10-50ms latência, 0-2% perda, 200-600 Mbps
+  - Internet: 30-150ms latência, 1-8% perda, 10-100 Mbps
+- 5 regiões do Brasil disponíveis no filtro dropdown
+- boxmean='sd' exibindo média e desvio padrão no box plot
+- Arquivo `10_interactive_filters.py` (versão limpa)
+- Arquivo `10_interactive_filters_commented.py` (versão didática com comentários linha a linha)
+- Item Filtros dropdown interativos da seção [Unreleased] concluído
+
+### Corrigido
+
+- **Bug no filtro dropdown de região:** box plot desaparecia ao selecionar qualquer região  
+- **Causa:** restyle com listas concatenadas causava aplicação incorreta dos dados quando scatter e box tinham tamanhos de lista diferentes por região
+- **Solução:** separação em dois pares [dados, índices] via args e args2, direcionando scatter (índices 0-3) e box (índices 4-7) de forma independente
+
+### Alterado
+
+- README.md atualizado com link para o novo gráfico interativo
+- Roadmap atualizado com item de filtros interativos marcado como concluído
+- Seção [Unreleased] atualizada: removidos itens concluídos
+
+### Documentação
+
+- Comentários detalhados sobre os três métodos de interatividade do Plotly puro:
+  - restyle: substitui dados dos traces (x, y, text, marker.size)
+  - relayout: altera propriedades do layout (range de eixos)
+  - update: controla visibilidade dos traces
+- Explicação de indices explícitos no restyle para evitar interferência entre grupos
+- Uso de legendgroup para vincular traces de subplots diferentes
+- Diferença entre Plotly puro (HTML estático) e Dash (servidor + callbacks)
+- Variações possíveis (reset zoom, trendline, exportação como imagem)
 
 ---
 

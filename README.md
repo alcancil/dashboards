@@ -38,7 +38,9 @@ dashboards/
 │   │   ├── 08_timeline_maintenance.py              # Timeline - Gráfico da Gantt - Janela de manutenção (Limpo) 
 │   │   ├── 08_timeline_maintenance_commented.py    # Timeline - Gráfico da Gantt - Janela de manutenção (Comentado)
 │   │   ├── 09_dashboard_intermediario.py           # Dashboard Intermediario (limpo)
-│   │   └── 09_dashboard_intermediario_commented.py # Dashboard Intermediario (Comentado)
+│   │   ├── 09_dashboard_intermediario_commented.py # Dashboard Intermediario (Comentado)
+│   │   ├── 10_interactive_filters.py               # Dashboard Interativo (limpo) 
+│   │   └── 10_interactive_filters_commented.py     # Dashboard Interativo (comentado)
 │   │
 │   └── avancado/                                   # 📕 Dashboards avançados (futuro)
 │       └── (em desenvolvimento)
@@ -55,6 +57,7 @@ dashboards/
 │   ├── 07_gauge_bandwidth.html                     # Output: Velocímetro - Monitoramento de Banda
 │   ├── 08_timeline_maintenance.html                # Output: Gráfico de Gantt - Janela de Manutenção
 │   ├── 09_dashboard_intermediario.html             # Output: Dashboard Intermediario
+│   ├── 10_interactive_filters.html                 # Output: Dashboard Interativo
 │   ├── git_commit_guide.md                         # Guia de commits profissionais
 │   ├── guia_versionamento.md                       # Guia de versionamento semântico
 │   └── .nojekyll                                   # Configuração GitHub Pages
@@ -89,7 +92,7 @@ dashboards/
 | 07 | Gauge                | `07_gauge_bandwidth.py`           | Medidor de banda               |
 | 08 | Timeline             | `08_timeline_maintenance.html`    | Janelas de manutenção          |
 | 09 | Dashboard            | `09_dashboard_intermediario.html` | Dashboard intermediário        |
-| 10 | Gráficos interativos | *(em desenvolvimento)*            | filtros, zoom, seleção         |
+| 10 | Gráficos interativos | `10_interactive_filters.html`     | filtros, zoom, seleção         |
 
 ### 🎨 Padrão de Organização
 
@@ -155,8 +158,10 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico Scatter (Dispersão) - latência (ms) vs perda de pacotes (%)](https://alcancil.github.io/dashboards/05_scatter_latency.html)  
 - [Gráfico Heatmap - Utilização de Dispositivos 24h](https://alcancil.github.io/dashboards/06_heatmap_devices.html)  
 - [Gráfico Gauge - Monitoramento de Banda (velocímetro)](https://alcancil.github.io/dashboards/07_gauge_bandwidth.html)  
-- [Gráfico Timeline (Gantt) - Janelas de Manutenção](https://alcancil.github.io/dashboards/08_timeline_maintenance.html) ⭐ **NOVO**
-- [Dashboard Intermediario - Monitoramento de Rede**](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html) ⭐ **NOVO**  
+- [Gráfico Timeline (Gantt) - Janelas de Manutenção](https://alcancil.github.io/dashboards/08_timeline_maintenance.html)  
+- [Dashboard Intermediario - Monitoramento de Rede**](https://alcancil.github.io/dashboards/10_interactive_filters.html)  
+- [Dashboard Interativo - Monitoramento de Rede**](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html) ⭐ **NOVO**  
+
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
@@ -259,19 +264,19 @@ chore(deps): update plotly to 5.18.0
 ✓ Heatmap (utilização de dispositivos ao longo do tempo)  
 ✓ Gauge (medidor de banda - velocímetro)  
 ✓ Timeline (janelas de manutenção)  
-✓ Dashboard intermediário com filtros interativos ⭐  
-⎕ Gráficos interativos (filtros, zoom, seleção)  
+✓ Dashboard intermediário com filtros interativos  
+✓ Gráficos interativos (filtros, zoom, seleção) ⭐  
 
-**Status:** 4/6 completo (83.34%) 🔄  
-**Versão atual:** v0.7.0  
+**Status:** 6/6 completo (100%) ✅  
+**Versão atual:** v0.8.0  
 **Versão esperada:** v0.3.0 - v0.8.0  
 **Previsão:** Semanas 2-4
   
-📅 **Fase 3: Avançado (Semana 3) - PLANEJADO**
+📅 **Fase 3: Avançado (Semana 3) - PLANEJADO** 🔄  
 
 ⎕ Leitura automática do repositório CCNP  
 ⎕ Dashboard de progresso por domínio  
-⎕ Integração com dados CSV/JSON
+⎕ Integração com dados CSV/JSON  
 ⎕ Dashboard completo com múltiplas páginas  
 ⎕ Métricas de negócio e KPIs  
 ⎕ Integração com scripts Netmiko/Paramiko  
