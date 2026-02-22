@@ -9,11 +9,59 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Timeline de janelas de manutenção
-- Dashboard intermediário com filtros interativos
 - Integração com dados reais via SNMP/SSH
 - Filtros dropdown interativos
 - Dashboard de progresso CCNP ENCOR por domínio
+
+---
+
+## [0.7.0] - 2026-02-21
+
+### Adicionado
+
+- **Dashboard Intermediário integrando 4 gráficos** com controles interativos
+  - Grid 2x2 com tipos heterogêneos de gráfico em um único dashboard
+  - **Scatter Plot** (Latência vs Perda de Pacotes):
+    - 50 links simulados com características realistas por tipo
+    - Fibra: 5-30ms latência, 0-1% perda
+    - Wireless: 15-80ms latência, 0.5-5% perda
+    - MPLS: 10-50ms latência, 0-2% perda
+    - Internet: 30-150ms latência, 1-8% perda
+    - Cores distintas por tipo de link com legenda global
+  - **Heatmap** (Utilização de Dispositivos 24h):
+    - Matriz 6x24 (6 dispositivos × 24 horas)
+    - Padrão realista de tráfego (madrugada/ramp-up/comercial/noite)
+    - Overhead extra em Firewalls (+10-20%) por stateful inspection
+    - Escala de cor verde → laranja → vermelho
+  - **Gauge Indicator** (Utilização Média de Banda):
+    - Média calculada dos 4 links principais
+    - Zonas coloridas: Verde (0-50%), Amarelo (50-80%), Vermelho (80-100%)
+    - Threshold visual em 90% (linha vermelha)
+  - **Tabela de Status (Resumo dos Links):**
+    - Capacidade e utilização absoluta e percentual de cada link
+    - Semáforo de status com emojis (🟢🟡🔴)
+    - Zebra striping para facilitar leitura
+- Timestamp dinâmico de atualização no título
+- Legenda global horizontal posicionada no topo direito
+- Arquivo `09_dashboard_intermediario.py` (versão limpa)
+- Arquivo `09_dashboard_intermediario_commented.py` (versão didática com comentários linha a linha)
+- Quinta e última entrega da Fase 2 - Gráficos Intermediários (100% completo)
+
+### Alterado
+
+- README.md atualizado com link para o novo dashboard intermediário
+- Roadmap da Fase 2 marcado como 100% completo (5/5 tarefas)
+- Seção [Unreleased] atualizada: removidos itens concluídos (Timeline e Dashboard Intermediário)
+
+### Documentação
+
+- Comentários detalhados sobre dashboards com subplots de tipos mistos
+- Explicação da diferença entre figure_factory e graph_objects
+- Uso de specs em make_subplots() para tipos heterogêneos (scatter, heatmap, indicator, table)
+- Lógica de semáforo com expressão condicional encadeada
+- Zebra striping em tabelas com multiplicação de lista
+- Variações possíveis (5º subplot com colspan, real-time com Dash, múltiplos gauges)
+- Aplicações práticas em NOC/SOC e relatórios de SLA
 
 ---
 

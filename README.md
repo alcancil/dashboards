@@ -16,54 +16,57 @@ Este repositório documenta minha jornada de aprendizado prático, combinando tr
 ```bash
 dashboards/
 │
-├── src/                                         # Código-fonte organizado por nível
+├── src/                                            # Código-fonte organizado por nível
 │   │
-│   ├── basico/                                  # 📘 Gráficos básicos e fundamentos
-│   │   ├── 01_line_chart.py                     # Gráfico de linha (limpo)
-│   │   ├── 01_line_chart_commented.py           # Gráfico de linha (comentado)
-│   │   ├── 02_bar_chart.py                      # Gráfico de barras (limpo)
-│   │   ├── 02_bar_chart_commented.py            # Gráfico de barras (comentado)
-│   │   ├── 03_pie_chart.py                      # Gráfico de pizza (limpo)
-│   │   ├── 03_pie_chart_commented.py            # Gráfico de pizza (comentado)
-│   │   ├── 04_dashboard_mvp.py                  # Dashboard MVP (limpo)
-│   │   └── 04_dashboard_mvp_commented.py        # Dashboard MVP (comentado)
+│   ├── basico/                                     # 📘 Gráficos básicos e fundamentos
+│   │   ├── 01_line_chart.py                        # Gráfico de linha (limpo)
+│   │   ├── 01_line_chart_commented.py              # Gráfico de linha (comentado)
+│   │   ├── 02_bar_chart.py                         # Gráfico de barras (limpo)
+│   │   ├── 02_bar_chart_commented.py               # Gráfico de barras (comentado)
+│   │   ├── 03_pie_chart.py                         # Gráfico de pizza (limpo)
+│   │   ├── 03_pie_chart_commented.py               # Gráfico de pizza (comentado)
+│   │   ├── 04_dashboard_mvp.py                     # Dashboard MVP (limpo)
+│   │   └── 04_dashboard_mvp_commented.py           # Dashboard MVP (comentado)
 │   │
-│   ├── intermediario/                           # 📗 Gráficos intermediários
-│   │   ├── 05_scatter_latency.py                # Scatter: latência vs perda
-│   │   ├── 05_scatter_latency_commented.py      # Scatter (comentado)
-│   │   ├── 06_heatmap_devices.py                # Heatmap: utilização 24h
-│   │   ├── 06_heatmap_devices_commented.py      # Heatmap (comentado)
-│   │   ├── 07_gauge_bandwidth.py                # Gauge (Velocímetro) - Monitoramento de Banda (Limpo)       
-│   │   ├── 07_gauge_bandwidth_commented.py      # Gauge - Monitoramento de Banda (comentado)
-│   │   ├── 08_timeline_maintenance.py           # Timeline - Gráfico da Gantt - Janela de manutenção (Limpo) 
-│   │   └── 08_timeline_maintenance_commented.py # Timeline - Gráfico da Gantt - Janela de manutenção (Comentado)
+│   ├── intermediario/                              # 📗 Gráficos intermediários
+│   │   ├── 05_scatter_latency.py                   # Scatter: latência vs perda
+│   │   ├── 05_scatter_latency_commented.py         # Scatter (comentado)
+│   │   ├── 06_heatmap_devices.py                   # Heatmap: utilização 24h
+│   │   ├── 06_heatmap_devices_commented.py         # Heatmap (comentado)
+│   │   ├── 07_gauge_bandwidth.py                   # Gauge (Velocímetro) - Monitoramento de Banda (Limpo)       
+│   │   ├── 07_gauge_bandwidth_commented.py         # Gauge - Monitoramento de Banda (comentado)
+│   │   ├── 08_timeline_maintenance.py              # Timeline - Gráfico da Gantt - Janela de manutenção (Limpo) 
+│   │   ├── 08_timeline_maintenance_commented.py    # Timeline - Gráfico da Gantt - Janela de manutenção (Comentado)
+│   │   ├── 09_dashboard_intermediario.py           # Dashboard Intermediario (limpo)
+│   │   └── 09_dashboard_intermediario_commented.py # Dashboard Intermediario (Comentado)
 │   │
-│   └── avancado/                                # 📕 Dashboards avançados (futuro)
+│   └── avancado/                                   # 📕 Dashboards avançados (futuro)
 │       └── (em desenvolvimento)
 │
-├── data/                                        # 📊 Dados para processamento (futuro)
+├── data/                                           # 📊 Dados para processamento (futuro)
 │
-├── docs/                                        # 📄 Outputs HTML e documentação
-│   ├── 01_line_chart.html                       # Output: Gráfico de linha
-│   ├── 02_bar_chart.html                        # Output: Gráfico de barras
-│   ├── 03_pie_chart.html                        # Output: Gráfico de pizza
-│   ├── 04_dashboard_mvp.html                    # Output: Dashboard MVP
-│   ├── 05_scatter_latency.html                  # Output: Scatter plot
-│   ├── 06_heatmap_devices.html                  # Output: Mapa de calor
-│   ├── 07_gauge_bandwidth.html                  # Output: Velocímetro - Monitoramento de Banda
-│   ├── 08_timeline_maintenance.html             # Output: Gráfico de Gantt - Janela de Manutenção
-│   ├── git_commit_guide.md                      # Guia de commits profissionais
-│   ├── guia_versionamento.md                    # Guia de versionamento semântico
-│   └── .nojekyll                                # Configuração GitHub Pages
+├── docs/                                           # 📄 Outputs HTML e documentação
+│   ├── 01_line_chart.html                          # Output: Gráfico de linha
+│   ├── 02_bar_chart.html                           # Output: Gráfico de barras
+│   ├── 03_pie_chart.html                           # Output: Gráfico de pizza
+│   ├── 04_dashboard_mvp.html                       # Output: Dashboard MVP
+│   ├── 05_scatter_latency.html                     # Output: Scatter plot
+│   ├── 06_heatmap_devices.html                     # Output: Mapa de calor
+│   ├── 07_gauge_bandwidth.html                     # Output: Velocímetro - Monitoramento de Banda
+│   ├── 08_timeline_maintenance.html                # Output: Gráfico de Gantt - Janela de Manutenção
+│   ├── 09_dashboard_intermediario.html             # Output: Dashboard Intermediario
+│   ├── git_commit_guide.md                         # Guia de commits profissionais
+│   ├── guia_versionamento.md                       # Guia de versionamento semântico
+│   └── .nojekyll                                   # Configuração GitHub Pages
 │
-├── exemplos/                                    # 💡 Exemplos de uso (futuro)
+├── exemplos/                                       # 💡 Exemplos de uso (futuro)
 │
-├── testes/                                      # 🧪 Testes automatizados (futuro)
+├── testes/                                         # 🧪 Testes automatizados (futuro)
 │
-├── .gitignore                                   # Arquivos ignorados pelo Git
-├── requerimentos.txt                            # Dependências Python (Plotly, Pandas)
-├── CHANGELOG.md                                 # Histórico de versões e mudanças
-└── README.md                                    # Este arquivo - Documentação principal
+├── .gitignore                                      # Arquivos ignorados pelo Git
+├── requerimentos.txt                               # Dependências Python (Plotly, Pandas)
+├── CHANGELOG.md                                    # Histórico de versões e mudanças
+└── README.md                                       # Este arquivo - Documentação principal
 ```
 
 ### 📊 Gráficos Disponíveis
@@ -79,14 +82,14 @@ dashboards/
 
 #### Fase 2 - Intermediários (🚧 50% Completa)
 
-| #  | Tipo                 | Arquivo                         | Descrição                      |
-|----|----------------------|---------------------------------|--------------------------------|
-| 05 | Scatter              | `05_scatter_latency.py`         | Correlação latência vs perda   |
-| 06 | Heatmap              | `06_heatmap_devices.py`         | Utilização de dispositivos 24h |
-| 07 | Gauge                | `07_gauge_bandwidth.py`         | Medidor de banda               |
-| 08 | Timeline             | `08_timeline_maintenance.html`  | Janelas de manutenção          |
-| 09 | Dashboard            | *(em desenvolvimento)*          | Dashboard intermediário        |
-| 10 | Gráficos interativos | *(em desenvolvimento)*          | filtros, zoom, seleção         |
+| #  | Tipo                 | Arquivo                           | Descrição                      |
+|----|----------------------|-----------------------------------|--------------------------------|
+| 05 | Scatter              | `05_scatter_latency.py`           | Correlação latência vs perda   |
+| 06 | Heatmap              | `06_heatmap_devices.py`           | Utilização de dispositivos 24h |
+| 07 | Gauge                | `07_gauge_bandwidth.py`           | Medidor de banda               |
+| 08 | Timeline             | `08_timeline_maintenance.html`    | Janelas de manutenção          |
+| 09 | Dashboard            | `09_dashboard_intermediario.html` | Dashboard intermediário        |
+| 10 | Gráficos interativos | *(em desenvolvimento)*            | filtros, zoom, seleção         |
 
 ### 🎨 Padrão de Organização
 
@@ -151,8 +154,9 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Dashboard MVP - Monitoramento de Rede**](https://alcancil.github.io/dashboards/04_dashboard_mvp.html)
 - [Gráfico Scatter (Dispersão) - latência (ms) vs perda de pacotes (%)](https://alcancil.github.io/dashboards/05_scatter_latency.html)  
 - [Gráfico Heatmap - Utilização de Dispositivos 24h](https://alcancil.github.io/dashboards/06_heatmap_devices.html)  
-- [Gráfico Gauge - Monitoramento de Banda (velocímetro)](https://alcancil.github.io/dashboards/07_gauge_bandwidth.html) ⭐ **NOVO**  
+- [Gráfico Gauge - Monitoramento de Banda (velocímetro)](https://alcancil.github.io/dashboards/07_gauge_bandwidth.html)  
 - [Gráfico Timeline (Gantt) - Janelas de Manutenção](https://alcancil.github.io/dashboards/08_timeline_maintenance.html) ⭐ **NOVO**
+- [Dashboard Intermediario - Monitoramento de Rede**](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html) ⭐ **NOVO**  
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
@@ -253,13 +257,13 @@ chore(deps): update plotly to 5.18.0
 
 ✓ Gráfico scatter ( dispersão - latência vs perda de pacotes)  
 ✓ Heatmap (utilização de dispositivos ao longo do tempo)  
-✓ Gauge (medidor de banda - velocímetro) ⭐  
+✓ Gauge (medidor de banda - velocímetro)  
 ✓ Timeline (janelas de manutenção)  
-⎕ Dashboard intermediário com filtros interativos  
+✓ Dashboard intermediário com filtros interativos ⭐  
 ⎕ Gráficos interativos (filtros, zoom, seleção)  
 
-**Status:** 4/6 completo (66.67%) 🔄  
-**Versão atual:** v0.6.0  
+**Status:** 4/6 completo (83.34%) 🔄  
+**Versão atual:** v0.7.0  
 **Versão esperada:** v0.3.0 - v0.8.0  
 **Previsão:** Semanas 2-4
   
@@ -284,9 +288,9 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 16         |
-| Gráficos gerados      | 8          |
-| Commits profissionais | 20         |
+| Scripts criados       | 18         |
+| Gráficos gerados      | 9          |
+| Commits profissionais | 21         |
 | Última atualização    | 20/02/2026 |
 
 ---  
