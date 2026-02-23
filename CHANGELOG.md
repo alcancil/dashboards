@@ -10,7 +10,59 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ### Em Desenvolvimento
 
 - Integração com dados reais via SNMP/SSH
-- Dashboard de progresso CCNP ENCOR por domínio
+- Dashboard de progresso CCNP ENCOR por domínio (script 12)
+- Integração com dados CSV/JSON
+- Dashboard completo com múltiplas páginas
+- Métricas de negócio e KPIs
+
+---
+
+## [0.9.0] - 2026-02-22
+
+### Adicionado
+
+- Leitura e Métricas do Progresso CCNP — primeiro script da Fase 3 (Avançado)
+- Lê data/ccnp_progress.json e calcula métricas por domínio e totais gerais
+- Cobre os 6 domínios do CCNP ENCORE 350-401:
+  - Architecture, Virtualization, Infrastructure, Network Assurance, Security, Automation
+- Três tipos de atividade rastreados por tópico: teoria, labs e resumo
+- Métricas calculadas por tópico, por domínio e geral:
+  - Totais planejados e concluídos
+  - Percentual de conclusão
+  - Dias restantes até a meta
+- Barra de progresso visual no terminal (█░) por domínio
+- Identificação automática de domínios não iniciados
+- Arquitetura em três camadas separadas:
+  - Leitura (carregar_dados)
+  - Cálculo (calcular_metricas_topico, calcular_metricas_dominio, calcular_metricas_gerais)
+  - Exibição (exibir_resumo, gerar_barra)
+- Projetado para ser importado como módulo pelo script 12 (dashboard visual)
+- Compatível com Windows, Linux e Mac via os.path.join
+- Arquivo data/ccnp_progress.json com dados reais do repositório CCNP
+- Schema estruturado em: repositório → domínios → tópicos → teoria/labs/resumo
+- Campos ultima_atualizacao e meta_conclusao para rastreamento temporal
+- Dados iniciais: 70 aulas de teoria, 19 labs, 1 resumo concluídos
+- Arquivo src/avancado/11_read_progress.py (versão limpa)
+- Arquivo src/avancado/11_read_progress_commented.py (versão didática com comentários linha a linha)
+- Pasta data/ criada na raiz do repositório
+- Pasta src/avancado/ criada para scripts da Fase 3
+- Início da Fase 3 - Avançado do roadmap
+
+### Alterado
+
+- README.md atualizado com estrutura da Fase 3 e link para o script 11
+- Roadmap atualizado: item "Leitura automática do repositório CCNP" marcado como concluído
+- Seção [Unreleased] atualizada com itens restantes da Fase 3
+
+### Documentação
+
+- Comentários detalhados sobre leitura de JSON com json.load()
+- Uso de os.path.join() para caminhos portáveis entre sistemas operacionais
+- Proteção contra KeyError com .get() e valores padrão
+- Cálculo de diferença entre datas com datetime e timedelta
+- Padrão if __name__ == '__main__' para permitir importação como módulo
+- Separação de responsabilidades: leitura, cálculo e exibição em funções distintas
+- Variações possíveis: velocidade de progresso, projeção de conclusão, exportação CSV
 
 ---
 

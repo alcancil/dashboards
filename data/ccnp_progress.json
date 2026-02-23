@@ -1,0 +1,165 @@
+{
+  "repositorio": "CCNP 350-401 ENCOR",
+  "ultima_atualizacao": "2026-02-22",
+  "meta_conclusao": "2027-12-31",
+  "dominios": [
+    {
+      "id": "01",
+      "nome": "Architecture",
+      "topicos": [
+        {
+          "id": "01",
+          "nome": "QoS",
+          "teoria": {
+            "total": 19,
+            "concluidos": 19
+          },
+          "labs": {
+            "total": 5,
+            "concluidos": 5,
+            "lista": [
+              { "id": "01", "nome": "Exemplo Prático de QoS 01", "status": "concluido" },
+              { "id": "02", "nome": "Exemplo Prático de QoS 02", "status": "concluido" },
+              { "id": "03", "nome": "Exemplo Prático de QoS 03", "status": "concluido" },
+              { "id": "04", "nome": "Exemplo Prático de QoS 04", "status": "concluido" },
+              { "id": "05", "nome": "Policing X Shapping",       "status": "concluido" }
+            ]
+          },
+          "resumo": {
+            "total": 1,
+            "concluidos": 1
+          }
+        },
+        {
+          "id": "02",
+          "nome": "Processo de Encaminhamento",
+          "teoria": {
+            "total": 8,
+            "concluidos": 8
+          },
+          "labs": {
+            "total": 0,
+            "concluidos": 0,
+            "lista": []
+          },
+          "resumo": {
+            "total": 0,
+            "concluidos": 0
+          }
+        },
+        {
+          "id": "03",
+          "nome": "Modelo Hierárquico",
+          "teoria": {
+            "total": 4,
+            "concluidos": 4
+          },
+          "labs": {
+            "total": 0,
+            "concluidos": 0,
+            "lista": []
+          },
+          "resumo": {
+            "total": 0,
+            "concluidos": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "nome": "Virtualization",
+      "topicos": [
+        {
+          "id": "01",
+          "nome": "Virtualization",
+          "teoria": {
+            "total": 12,
+            "concluidos": 12
+          },
+          "labs": {
+            "total": 6,
+            "concluidos": 6,
+            "lista": [
+              { "id": "11", "nome": "Exemplo Prático VRF LITE 01 - Rota Estática", "status": "concluido" },
+              { "id": "12", "nome": "Exemplo Prático VRF LITE 02 - OSPF",          "status": "concluido" },
+              { "id": "13", "nome": "Exemplo Prático VRF LITE 03 - EIGRP",         "status": "concluido" },
+              { "id": "14", "nome": "Exemplo Prático VRF LITE 04 - IPv6",          "status": "concluido" },
+              { "id": "15", "nome": "Exemplo Prático VRF LITE 04 - IPv6 02",       "status": "concluido" },
+              { "id": "17", "nome": "Exemplo Prático Túneis GRE 01",               "status": "concluido" }
+            ]
+          },
+          "resumo": {
+            "total": 0,
+            "concluidos": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "nome": "Infrastructure",
+      "topicos": [
+        {
+          "id": "01",
+          "nome": "Multicast",
+          "teoria": {
+            "total": 6,
+            "concluidos": 6
+          },
+          "labs": {
+            "total": 8,
+            "concluidos": 8,
+            "lista": [
+              { "id": "05", "nome": "Exemplo Prático PIM Dense Mode",                              "status": "concluido" },
+              { "id": "06", "nome": "Exemplo Prático PIM Sparse Mode com RP Manual",               "status": "concluido" },
+              { "id": "07", "nome": "Exemplo Prático PIM Sparse Mode com AutoRP",                  "status": "concluido" },
+              { "id": "08", "nome": "Exemplo Prático PIM Sparse Mode com Bootstrap Router",        "status": "concluido" },
+              { "id": "09", "nome": "Exemplo Prático SSM e IGMP v3",                               "status": "concluido" },
+              { "id": "10", "nome": "Exemplo Prático PIM Bidirecional Multicast",                  "status": "concluido" },
+              { "id": "11", "nome": "Exemplo Prático PIM MSDP Parte 01",                           "status": "concluido" },
+              { "id": "12", "nome": "Exemplo Prático PIM MSDP Parte 02",                           "status": "concluido" }
+            ]
+          },
+          "resumo": {
+            "total": 0,
+            "concluidos": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "nome": "Network Assurance",
+      "topicos": []
+    },
+    {
+      "id": "05",
+      "nome": "Security",
+      "topicos": []
+    },
+    {
+      "id": "06",
+      "nome": "Automation",
+      "topicos": [
+        {
+          "id": "01",
+          "nome": "Automation",
+          "teoria": {
+            "total": 21,
+            "concluidos": 21
+          },
+          "labs": {
+            "total": 0,
+            "concluidos": 0,
+            "lista": []
+          },
+          "resumo": {
+            "total": 0,
+            "concluidos": 0
+          }
+        }
+      ]
+    }
+  ]
+}
