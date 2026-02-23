@@ -44,7 +44,10 @@ dashboards/
 │   │
 │   └── avancado/                                   # 📕 Dashboards avançados 
 │       ├── 11_read_progress.py                     # Leitura de progresso: status de avanço (limpo)  
-│       └── 11_read_progress_commented.py           # Leitura de progresso: status de avanço (Comentado)  
+│       ├── 11_read_progress_commented.py           # Leitura de progresso: status de avanço (Comentado)  
+│       ├── 12_dashboard_progress.py                # Dashboard progresso: acumulação v2 (limpo)
+│       ├── 12_dashboard_progress_commented.py      # Dashboard progresso: acumulação v2 (comentado)
+│       └── read_progress_helper.py                 # Helper compartilhado de leitura e cálculo
 │
 ├── data/                                           # 📊 Dados para processamento  
 │   └── ccnp_progress.json                          # Progresso CCNP por domínio
@@ -60,6 +63,7 @@ dashboards/
 │   ├── 08_timeline_maintenance.html                # Output: Gráfico de Gantt - Janela de Manutenção
 │   ├── 09_dashboard_intermediario.html             # Output: Dashboard Intermediario
 │   ├── 10_interactive_filters.html                 # Output: Dashboard Interativo
+│   ├── 12_dashboard_progress.html                  # Output: Dashboard de Progresso
 │   ├── git_commit_guide.md                         # Guia de commits profissionais
 │   ├── guia_versionamento.md                       # Guia de versionamento semântico
 │   └── .nojekyll                                   # Configuração GitHub Pages
@@ -96,16 +100,17 @@ dashboards/
 | 09 | Dashboard            | `09_dashboard_intermediario.html` | Dashboard intermediário        |
 | 10 | Gráficos interativos | `10_interactive_filters.html`     | filtros, zoom, seleção         |
 
-#### Fase 3 - Avançado (🚧 1.3% em andamento)
+#### Fase 3 - Avançado (🚧 28.6% em andamento)
 
-| #  | Tipo                                     | Arquivo                           | Descrição                                |
-|----|------------------------------------------|-----------------------------------|------------------------------------------|
-| 11 | Leitura automática do repositório CCNP   | `11_read_progress.py`             | Leitura automática do repositório CCNP   |
-| 06 | Dashboard de progresso por domínio       | em andamento                      | Dashboard de progresso por domínio       |
-| 07 | Integração com dados CSV/JSON            | em andamento                      | Integração com dados CSV/JSON            |
-| 08 | Dashboard completo com múltiplas páginas | em andamento                      | Dashboard completo com múltiplas páginas |
-| 09 | Métricas de negócio e KPIs               | em andamento                      | Métricas de negócio e KPIs               |
-| 10 | Gráficos interativos                     | em andamento                      | Gráficos interativos                     |
+| #  | Tipo                                            | Arquivo                           | Descrição                                |
+|----|-------------------------------------------------|-----------------------------------|------------------------------------------|
+| 11 | Leitura automática do repositório CCNP          | `11_read_progress.py`             | Leitura automática do repositório CCNP   |
+| 12 | Dashboard de progresso por domínio - acumulado  | em andamento                      | Dashboard de progresso por domínio       |
+| 13 | Integração com dados CSV/JSON                   | em andamento                      | Integração com dados CSV/JSON            |
+| 14 | Dashboard completo com múltiplas páginas        | em andamento                      | Dashboard completo com múltiplas páginas |
+| 15 | Métricas de negócio e KPIs                      | em andamento                      | Métricas de negócio e KPIs               |
+| 16 | Gráficos interativos                            | em andamento                      | Gráficos interativos                     |
+| 17 | Observabilidade (Zabbix/Graylog)                | em andamento                      | Observabilidade (Zabbix/Graylog)         |
 
 ### 🎨 Padrão de Organização
 
@@ -172,8 +177,9 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico Heatmap - Utilização de Dispositivos 24h](https://alcancil.github.io/dashboards/06_heatmap_devices.html)  
 - [Gráfico Gauge - Monitoramento de Banda (velocímetro)](https://alcancil.github.io/dashboards/07_gauge_bandwidth.html)  
 - [Gráfico Timeline (Gantt) - Janelas de Manutenção](https://alcancil.github.io/dashboards/08_timeline_maintenance.html)  
-- [Dashboard Intermediario - Monitoramento de Rede**](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html)  
-- [Dashboard Interativo - Monitoramento de Rede**](https://alcancil.github.io/dashboards/10_interactive_filters.html) ⭐ **NOVO**  
+- [Dashboard Intermediario - Monitoramento de Rede](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html)  
+- [Dashboard Interativo - Monitoramento de Rede](https://alcancil.github.io/dashboards/10_interactive_filters.html)  
+- [Dashboard de Progresso CCNP - Métricas por Domínio](https://alcancil.github.io/dashboards/112_dashboard_progress.html) ⭐ **NOVO**  
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
@@ -287,15 +293,15 @@ chore(deps): update plotly to 5.18.0
 📅 **Fase 3: Avançado (Semana 3) - PLANEJADO** 🔄  
 
 ✓ Leitura automática do repositório CCNP ⭐  
-⎕ Dashboard de progresso por domínio  
+✓ Dashboard de progresso v2 — métricas por acumulação ⭐  
 ⎕ Integração com dados CSV/JSON  
 ⎕ Dashboard completo com múltiplas páginas  
 ⎕ Métricas de negócio e KPIs  
 ⎕ Integração com scripts Netmiko/Paramiko  
 ⎕ Observabilidade (Zabbix/Graylog)  
 
-**Status:** 1/7 completo (14.3%) ✅  
-**Versão atual:** v0.9.0  
+**Status:** 2/7 completo (28.6%) ✅  
+**Versão atual:** v0.10.0  
 **Versão esperada:** v0.9.0 - v1.15.0  
 **Previsão:** Semanas 3-5
   
@@ -310,10 +316,10 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 22         |
-| Gráficos gerados      | 10         |
+| Scripts criados       | 26         |
+| Gráficos gerados      | 11         |
 | Commits profissionais | 24         |
-| Última atualização    | 22/02/2026 |
+| Última atualização    | 23/02/2026 |
 
 ---  
 

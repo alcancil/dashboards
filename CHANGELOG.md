@@ -17,6 +17,49 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
+### [0.10.0] - 2026-02-23
+
+## Adicionado
+
+- Dashboard de Progresso CCNP v2 — Métricas por Acumulação
+- Abordagem v2: mede conteúdo acumulado (não % de total desconhecido)
+- Ideal para repositórios em construção contínua sem backlog pré-definido
+- Dashboard HTML com 6 subplots em grade 2x3:
+  - [1,1] Barras empilhadas: conteúdo acumulado por domínio (teoria + labs + resumo)
+  - [1,2] Barras simples: labs realizados por domínio (cinza para não iniciados)
+  - [1,3] Donut chart: distribuição proporcional entre teoria, labs e resumo
+  - [2,1] Barras com colorscale: total acumulado (gradiente cinza → azul → verde)
+  - [2,2] Comparativo: teoria vs labs por domínio
+  - [2,3] Tabela: resumo completo com zebra striping e status ✅/⬜
+- Cards de totais no topo via annotations (teoria, labs, resumo, total geral)
+- Tema escuro estilo terminal (Courier New, fundo #0F1117)
+- Cores condicionais: domínios não iniciados aparecem em cinza
+- Arquivo read_progress_helper.py — módulo compartilhado de leitura e cálculo
+- Centraliza carregar_dados e calcular_metricas_gerais
+- Importado pelos scripts 11 e 12 (e futuros scripts da Fase 3)
+- Quando a API GitHub entrar (Fase 4), só este arquivo muda
+- Arquivo `12_dashboard_progress.py` (versão limpa)
+- Arquivo `12_dashboard_progress_commented.py` (versão didática com comentários linha a linha)
+- Item Dashboard de progresso por domínio do roadmap concluído
+
+## Documentação
+
+- Diferença explícita entre abordagem v1 (script 11) e v2 (script 12):
+  - v1: total/concluidos → percentual de um plano fixo (escopo fechado)
+  - v2: concluidos como valor absoluto → acumulação (construção contínua)
+- Arquitetura de módulos: helper → scripts 11 e 12
+- Colorscale numérica em barras (cor proporcional ao valor)
+- Donut chart com hole=0.45
+- Loop sobre lista de tuplas para annotations sem repetição de código
+- Zebra striping com fill_color e multiplicação de lista
+
+## Alterado
+
+- README.md atualizado: script 12, helper, roadmap Fase 3 (2/8, v0.10.0)
+- Seção [Unreleased] atualizada: removidos itens concluídos
+
+---
+
 ## [0.9.0] - 2026-02-22
 
 ### Adicionado
