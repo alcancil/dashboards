@@ -179,7 +179,7 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico Timeline (Gantt) - Janelas de Manutenção](https://alcancil.github.io/dashboards/08_timeline_maintenance.html)  
 - [Dashboard Intermediario - Monitoramento de Rede](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html)  
 - [Dashboard Interativo - Monitoramento de Rede](https://alcancil.github.io/dashboards/10_interactive_filters.html)  
-- [Dashboard de Progresso CCNP - Métricas por Domínio](https://alcancil.github.io/dashboards/112_dashboard_progress.html) ⭐ **NOVO**  
+- [Dashboard de Progresso CCNP - Métricas por Domínio](https://alcancil.github.io/dashboards/12_dashboard_progress.html) ⭐ **NOVO**  
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
