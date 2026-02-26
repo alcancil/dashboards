@@ -9,11 +9,41 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Integração com dados reais via SNMP/SSH
-- Dashboard de progresso CCNP ENCOR por domínio (script 12)
-- Integração com dados CSV/JSON
+- Pipeline git log → CSV → dashboard (v0.11.0)
 - Dashboard completo com múltiplas páginas
 - Métricas de negócio e KPIs
+- Integração com scripts Netmiko/Paramiko
+- Observabilidade (Zabbix/Graylog)
+
+---
+
+## [0.10.1] - 2026-02-26
+
+### Alterado
+
+- Reestruturação arquitetural da pasta `data/` em três camadas:
+  - `data/raw/` — dados brutos e imutáveis (fonte da verdade)
+  - `data/processed/` — dados tratados pelos scripts de pipeline
+  - `data/external/` — reservado para APIs externas (Fase 4)
+- Criação da pasta `scripts/` com subpastas `parsing/`, `metrics/` e `integrations/`
+  - Separa scripts de pipeline de dados dos scripts de visualização em `src/`
+  - Padrão de engenharia de dados: raw → processed → dashboard
+- Renomeação de `testes/` para `tests/` (padronização para inglês)
+- Arquivo `ccnp_progress.json` movido de `data/` para `data/processed/`
+
+### Corrigido
+
+- Caminho do JSON nos scripts 11 e 12 atualizado para `data/processed/`
+  - `11_read_progress.py` e `11_read_progress_commented.py`
+  - `12_dashboard_progress.py` e `12_dashboard_progress_commented.py`
+- Removido `read_progress_helper.py` (descontinuado — scripts 11 e 12 são autossuficientes)
+
+### Documentação
+
+- README.md atualizado com nova estrutura de pastas
+- Seção "Pastas Principais" reescrita para refletir arquitetura de pipeline
+- Roadmap Fase 3 corrigido: versão atual v0.10.1, range v0.9.0 - v0.15.0
+- Tabela Fase 3 atualizada: script 12 marcado como concluído, item 13 descreve pipeline
 
 ---
 

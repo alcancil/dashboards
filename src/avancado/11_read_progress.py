@@ -11,14 +11,16 @@ Data: 2026-02-22
 """
 
 import json
-import os
 from datetime import datetime
+from pathlib import Path
 
 # ============================================================================
 # CONFIGURAÇÃO
 # ============================================================================
 
-CAMINHO_JSON = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'ccnp_progress.json')
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data" / "processed"
+CAMINHO_JSON = DATA_DIR / "ccnp_progress.json"
 
 # ============================================================================
 # FUNÇÕES DE LEITURA

@@ -22,7 +22,7 @@ from datetime import datetime
 # ============================================================================
 
 BASE_DIR       = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-CAMINHO_JSON   = os.path.join(BASE_DIR, 'data', 'ccnp_progress.json')
+CAMINHO_JSON   = os.path.join(BASE_DIR, 'data', 'processed', 'ccnp_progress.json')
 CAMINHO_OUTPUT = os.path.join(BASE_DIR, 'docs', '12_dashboard_progress.html')
 
 CORES = {

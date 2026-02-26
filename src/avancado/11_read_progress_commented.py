@@ -18,26 +18,31 @@ Data: 2026-02-22
 import json       # Módulo nativo do Python para ler e escrever arquivos JSON
                   # Não precisa instalar — já vem com o Python
 
-import os         # Módulo nativo para manipular caminhos de arquivos e pastas
-                  # Usado aqui para montar o caminho até o ccnp_progress.json
-                  # de forma que funcione em Windows, Linux e Mac
-
 from datetime import datetime   # Classe para trabalhar com datas e horas
                                 # Usada para calcular dias restantes até a meta
+
+from pathlib import Path  # Classe moderna para manipulação de caminhos
+                          # Substitui os.path (mais legível, segura e orientada a objetos)
+                          # Permite montar caminhos usando o operador "/"
 
 # ============================================================================
 # CONFIGURAÇÃO
 # ============================================================================
 
-# os.path.dirname(__file__) → pasta onde este script está salvo
-#   Ex: D:\Estudos\Phyton\dashboards\src\avancado
-#
-# os.path.join(..., '..', '..', 'data', 'ccnp_progress.json')
-#   → sobe duas pastas (avancado → src → dashboards) e entra em data/
-#   → resultado: D:\Estudos\Phyton\dashboards\data\ccnp_progress.json
-#
-# Isso garante que o script acha o JSON independente de onde você executar
-CAMINHO_JSON = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'ccnp_progress.json')
+BASE_DIR = Path(__file__).resolve().parents[2]
+# Path(__file__)        → caminho do arquivo atual
+# .resolve()            → converte para caminho absoluto
+# .parents[2]           → sobe dois níveis na hierarquia de pastas
+# Resultado: pasta raiz do projeto (DASHBOARDS)
+
+DATA_DIR = BASE_DIR / "data" / "processed"
+# Operador "/" do Path junta partes do caminho
+# Equivale a: BASE_DIR/data/processed
+# Vantagem: funciona em Windows, Linux e Mac automaticamente
+
+CAMINHO_JSON = DATA_DIR / "ccnp_progress.json"
+# Caminho final completo até o arquivo JSON
+# Agora o arquivo está em: data/processed/ccnp_progress.json
 
 # ============================================================================
 # FUNÇÕES DE LEITURA E CÁLCULO

@@ -43,8 +43,8 @@ from datetime import datetime              # Cálculo de dias restantes até a m
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 # Caminho completo até o arquivo de dados
-# BASE_DIR + 'data' + 'ccnp_progress.json'
-CAMINHO_JSON = os.path.join(BASE_DIR, 'data', 'ccnp_progress.json')
+# BASE_DIR + 'data' + `processed` + 'ccnp_progress.json'
+CAMINHO_JSON = os.path.join(BASE_DIR, 'data', 'processed', 'ccnp_progress.json')
 
 # Caminho completo do arquivo HTML de saída
 # BASE_DIR + 'docs' + '12_dashboard_progress.html'
