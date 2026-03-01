@@ -108,17 +108,18 @@ dashboards/
 | 09 | Dashboard            | `09_dashboard_intermediario.html` | Dashboard intermediário        |
 | 10 | Gráficos interativos | `10_interactive_filters.html`     | filtros, zoom, seleção         |
 
-#### Fase 3 - Avançado (🔄 2/7 em andamento)
+#### Fase 3 - Avançado (🔄 3/8 em andamento)
 
-| #  | Tipo                                            | Arquivo                           | Descrição                                |
-|----|-------------------------------------------------|-----------------------------------|------------------------------------------|
-| 11 | Leitura automática do repositório CCNP          | `11_read_progress.py`             | Leitura e métricas do progresso CCNP     |
-| 12 | Dashboard de progresso por acumulação           | `12_dashboard_progress.py`        | Dashboard de progresso por domínio       |
-| 13 | Integração com dados CSV/JSON                   | em andamento                      | Pipeline git log → CSV → dashboard       |
-| 14 | Dashboard completo com múltiplas páginas        | em andamento                      | Dashboard completo com múltiplas páginas |
-| 15 | Métricas de negócio e KPIs                      | em andamento                      | Métricas de negócio e KPIs               |
-| 16 | Integração com scripts Netmiko/Paramiko         | em andamento                      | Integração com scripts Netmiko/Paramiko  |
-| 17 | Observabilidade (Zabbix/Graylog)                | em andamento                      | Observabilidade (Zabbix/Graylog)         |
+| #  | Tipo                                            | Arquivo                              | Descrição                                          |
+|----|-------------------------------------------------|--------------------------------------|----------------------------------------------------|
+| 11 | Leitura automática do repositório CCNP          | `11_read_progress.py`                | Leitura e métricas do progresso CCNP               |
+| 12 | Dashboard de progresso por acumulação           | `12_dashboard_progress.py`           | Dashboard de progresso por domínio                 |
+| 13 | Pipeline git log → CSV → Dashboard              | `13_git_log_pipeline.py`             | Extração, parsing, CSV e dashboard em script único |
+| 14 | Modularização do pipeline                       | em andamento                         | Separa script 13 em módulos reutilizáveis          |
+| 15 | Dashboard completo com múltiplas páginas        | em andamento                         | Dashboard completo com múltiplas páginas           |
+| 16 | Métricas de negócio e KPIs                      | em andamento                         | Métricas de negócio e KPIs                         |
+| 17 | Integração com scripts Netmiko/Paramiko         | em andamento                         | Integração com scripts Netmiko/Paramiko            |
+| 18 | Observabilidade (Zabbix/Graylog)                | em andamento                         | Observabilidade (Zabbix/Graylog)                   |
 
 ### 🎨 Padrão de Organização
 
@@ -187,7 +188,8 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Gráfico Timeline (Gantt) - Janelas de Manutenção](https://alcancil.github.io/dashboards/08_timeline_maintenance.html)  
 - [Dashboard Intermediario - Monitoramento de Rede](https://alcancil.github.io/dashboards/09_dashboard_intermediario.html)  
 - [Dashboard Interativo - Monitoramento de Rede](https://alcancil.github.io/dashboards/10_interactive_filters.html)  
-- [Dashboard de Progresso CCNP - Métricas por Domínio](https://alcancil.github.io/dashboards/12_dashboard_progress.html) ⭐ **NOVO**
+- [Dashboard de Progresso CCNP - Métricas por Domínio](https://alcancil.github.io/dashboards/12_dashboard_progress.html)
+- [Git Log Dashboard — Análise de Commits CCNP](https://alcancil.github.io/dashboards/13_dashboard_git_log.html) ⭐ **NOVO**
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
@@ -216,7 +218,7 @@ Contém todos os scripts Python organizados por nível de complexidade:
 - **intermediario/**: Gráficos avançados com interatividade e automação de leitura de dados.
 - **avancado/**: Dashboards com integração a dados reais e métricas de negócio.
 
-**scripts/ - Pipeline de Dados**
+**scripts/ - Pipeline de Dados**  
 
 Scripts responsáveis pela transformação e geração de dados:
 
@@ -237,7 +239,7 @@ Organizada em três camadas seguindo padrão de engenharia de dados:
 - Arquivos HTML gerados pelos scripts (dashboards interativos)
 - Guias adicionais (Git, versionamento, etc.)
 
-**tests/ - Testes**
+**tests/ - Testes**  
 
 - Testes automatizados (planejado para Fase 4)
   
@@ -310,15 +312,16 @@ chore(deps): update plotly to 5.18.0
 
 ✓ Leitura automática do repositório CCNP ⭐  
 ✓ Dashboard de progresso v2 — métricas por acumulação ⭐  
-⎕ Integração com dados CSV/JSON (pipeline git log → CSV)  
+✓ Pipeline git log → CSV → Dashboard (script único) ⭐  
+⎕ Modularização do pipeline (separa script 13 em módulos)  
 ⎕ Dashboard completo com múltiplas páginas  
 ⎕ Métricas de negócio e KPIs  
 ⎕ Integração com scripts Netmiko/Paramiko  
 ⎕ Observabilidade (Zabbix/Graylog)  
 
-**Status:** 2/7 completo (28.6%) ✅  
-**Versão atual:** v0.10.1  
-**Versão esperada:** v0.9.0 - v0.15.0  
+**Status:** 3/8 completo (37.5%) ✅  
+**Versão atual:** v0.11.0  
+**Versão esperada:** v0.9.0 - v0.16.0  
 **Previsão:** Semanas 3-5
   
 🚀 **Fase 4: Automação (Semana 4) - PLANEJADO**  
@@ -332,10 +335,10 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 24         |
-| Gráficos gerados      | 11         |
-| Commits profissionais | 25         |
-| Última atualização    | 26/02/2026 |
+| Scripts criados       | 26         |
+| Gráficos gerados      | 12         |
+| Commits profissionais | 26         |
+| Última atualização    | 28/02/2026 |
 
 ---  
 

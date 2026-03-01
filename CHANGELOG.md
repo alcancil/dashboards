@@ -9,11 +9,60 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Pipeline git log → CSV → dashboard (v0.11.0)
+- Modularização do pipeline (v0.12.0) — separa script 13 em módulos reutilizáveis em `scripts/parsing/` e `scripts/metrics/`
 - Dashboard completo com múltiplas páginas
 - Métricas de negócio e KPIs
 - Integração com scripts Netmiko/Paramiko
 - Observabilidade (Zabbix/Graylog)
+
+---
+
+## [0.11.0] - 2026-02-28
+
+### Adicionado
+
+- Pipeline completo git log → CSV → Dashboard em script único (`13_git_log_pipeline.py`)
+- 4 etapas sequenciais dentro de um único script (didático — antes de modularizar):
+  - `[1/4]` Extração: executa `git log --pretty=format:"%H|%ad|%s" --date=iso` via `subprocess` e salva em `data/raw/raw_git_log.txt`
+  - `[2/4]` Parsing: separa campos pelo delimitador `|`, normaliza verbos e classifica commits por ação, domínio CCNP e lab
+  - `[3/4]` CSV: salva registros estruturados em `data/processed/git_log.csv` com 8 colunas
+  - `[4/4]` Dashboard: lê o CSV com Pandas e gera `docs/13_dashboard_git_log.html` com 4 gráficos
+- Argumento `--repo` via `argparse` para portabilidade entre máquinas (sem path hardcoded)
+- Validação do repositório antes da execução (verifica diretório e pasta `.git`)
+- `BASE_DIR` via `__file__` para caminhos sempre relativos à raiz do projeto
+- Parsing sem regex — apenas `split()`, `strip()`, `lower()` e operador `in`:
+  - `extract_action()` — normaliza verbo de ação via dicionário `ACTION_MAP` (trata typos reais: `alteradoo`, `aletardo`, `alterad`, etc.)
+  - `extract_domain()` — identifica domínio CCNP por palavras-chave (`ospf`, `bgp`, `vrf`, `python`, `vpn`, etc.)
+  - `extract_lab()` — detecta commits de laboratório pela presença de `"Exemplo Prático"` na mensagem
+- Dashboard com 4 gráficos e tema escuro estilo terminal:
+  - `[1,1]` Linha com área preenchida: commits ao longo do tempo por semana
+  - `[1,2]` Barras com cor por tipo de ação: distribuição de verbos normalizados
+  - `[2,1]` Barras horizontais: distribuição por domínio CCNP
+  - `[2,2]` Heatmap estilo GitHub contributions: commits por dia da semana vs semana
+  - 4 cards informativos no topo: Total de Commits, Primeiro Commit, Último Commit, Labs Realizados
+- CSV com 8 colunas: `hash`, `date`, `week`, `weekday`, `message`, `action`, `domain`, `lab`
+- Arquivo `src/avancado/13_git_log_pipeline.py` (versão limpa)
+- Arquivo `src/avancado/13_git_log_pipeline_commented.py` (versão didática com comentários linha a linha)
+
+### Alterado
+
+- `requirements.txt` atualizado: adicionado `pandas` como dependência core
+- README.md atualizado: script 13 na tabela Fase 3, link no GitHub Pages, roadmap atualizado
+- Roadmap Fase 3: item 13 marcado como concluído, novo item 14 (modularização) adicionado
+- Numeração dos itens pendentes da Fase 3 ajustada (14→18)
+
+### Documentação
+
+- Comentários detalhados sobre `argparse` e argumentos de linha de comando
+- Uso de `subprocess.run` com lista de argumentos para portabilidade
+- `BASE_DIR` com `os.path.dirname` e `__file__` para caminhos independentes de CWD
+- Filosofia de parsing sem regex: legibilidade vs poder expressivo
+- Dicionário de lookup como alternativa ao pattern matching
+- Operador `in` para busca de substring em mensagens de commit
+- `csv.DictWriter` para exportação estruturada
+- `pandas` para leitura de CSV e agregações (`groupby`, `value_counts`, `unstack`)
+- Heatmap com `pivot table`, `reindex` e transposição de matriz (`.values.T`)
+- Annotations do Plotly para cards informativos fora da área de subplots
 
 ---
 
