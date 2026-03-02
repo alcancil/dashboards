@@ -313,14 +313,14 @@ chore(deps): update plotly to 5.18.0
 ✓ Leitura automática do repositório CCNP ⭐  
 ✓ Dashboard de progresso v2 — métricas por acumulação ⭐  
 ✓ Pipeline git log → CSV → Dashboard (script único) ⭐  
-⎕ Modularização do pipeline (separa script 13 em módulos)  
+✓ Modularização do pipeline (extract.py + parser.py + orquestrador) ⭐  
 ⎕ Dashboard completo com múltiplas páginas  
 ⎕ Métricas de negócio e KPIs  
 ⎕ Integração com scripts Netmiko/Paramiko  
 ⎕ Observabilidade (Zabbix/Graylog)  
 
-**Status:** 3/8 completo (37.5%) ✅  
-**Versão atual:** v0.11.0  
+**Status:** 4/8 completo (50%) ✅  
+**Versão atual:** v0.12.0  
 **Versão esperada:** v0.9.0 - v0.16.0  
 **Previsão:** Semanas 3-5
   
