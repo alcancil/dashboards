@@ -9,11 +9,42 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Modularização do pipeline (v0.12.0) — separa script 13 em módulos reutilizáveis em `scripts/parsing/` e `scripts/metrics/`
-- Dashboard completo com múltiplas páginas
+- Dashboard completo modularizado — script 16 (versão modular do script 15)
 - Métricas de negócio e KPIs
 - Integração com scripts Netmiko/Paramiko
 - Observabilidade (Zabbix/Graylog)
+
+---
+
+## [0.13.0] - 2026-03-02
+
+### Adicionado
+
+- Dashboard completo com 3 abas em um único HTML (`15_dashboard_completo.py`)
+- Fonte de dados dupla: git log extraído na hora via `subprocess` + estrutura de pastas via `os.listdir()`
+- Dois argumentos CLI: `--repo` (raiz do `.git`) e `--ccnp` (pasta do blueprint ENCORE)
+- Função `scan_blueprint()`: escaneia os 6 domínios do Blueprint ENCORE e coleta tópicos, subtópicos e labs por pasta
+- Detecção de labs por nome de pasta: qualquer pasta com `"Exemplo Pr"` no nome é contabilizada como lab
+- Ignoração automática de pastas de suporte: `Arquivos`, `Imagens`, `Simulado`
+- Sistema de abas com HTML/CSS/JS puro — sem dependências externas além do Plotly
+- `plotly.io.to_html(full_html=False, include_plotlyjs=False)` para embutir múltiplos gráficos sem duplicar o JS
+- **Aba 1 — Resumo Geral**: 4 cards (commits, subtópicos, labs, domínios iniciados) + barras horizontais por domínio + linha de commits por semana
+- **Aba 2 — Progresso CCNP**: barras agrupadas (subtópicos vs labs), pizza/donut de distribuição + tabela HTML com status por domínio
+- **Aba 3 — Análise de Commits**: 4 cards + grade 2x2 (linha, barras por ação, barras por domínio, heatmap)
+- Arquivos `src/avancado/15_dashboard_completo.py` (versão limpa) e `src/avancado/15_dashboard_completo_commented.py` (versão didática)
+
+### Alterado
+
+- README.md: item 15 concluído na tabela Fase 3, link GitHub Pages, roadmap 5/8 (62.5%), versão v0.13.0
+- CHANGELOG.md: [Unreleased] atualizado, entrada v0.13.0 adicionada
+
+### Documentação
+
+- Comentários sobre `scan_blueprint()`: `os.listdir()`, `sorted()`, filtragem de pastas de suporte, detecção de labs por substring
+- Diferença entre fonte de dados: estrutura de pastas (o que existe) vs git log (quando e como foi trabalhado)
+- `pio.to_html(full_html=False)`: por que não embutir o JS do Plotly N vezes
+- Sistema de abas: `display:none` / `display:block` via JS puro sem dependência de framework
+- `specs=[[ {"type":"xy"}, {"type":"domain"} ]]`: obrigatório ao misturar gráfico cartesiano com Pie no mesmo subplot
 
 ---
 
