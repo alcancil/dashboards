@@ -108,7 +108,7 @@ dashboards/
 | 09 | Dashboard            | `09_dashboard_intermediario.html` | Dashboard intermediário        |
 | 10 | Gráficos interativos | `10_interactive_filters.html`     | filtros, zoom, seleção         |
 
-#### Fase 3 - Avançado (🔄 5/8 em andamento)
+#### Fase 3 - Avançado (🔄 6/8 em andamento)
 
 | #  | Tipo                                            | Arquivo                              | Descrição                                          |
 |----|-------------------------------------------------|--------------------------------------|----------------------------------------------------|
@@ -117,7 +117,7 @@ dashboards/
 | 13 | Pipeline git log → CSV → Dashboard              | `13_git_log_pipeline.py`             | Extração, parsing, CSV e dashboard em script único |
 | 14 | Modularização do pipeline                       | `14_git_log_modular.py`              | Separa script 13 em módulos reutilizáveis          |
 | 15 | Dashboard completo com múltiplas páginas        | `15_dashboard_completo.py`           | Dashboard com 3 abas: Resumo, Progresso, Git Log   |
-| 16 | Métricas de negócio e KPIs                      | em andamento                         | Métricas de negócio e KPIs                         |
+| 16 | Dashboard completo modularizado                 | `16_dashboard_completo_modular.py`   | Versão modular do script 15 — scanner.py separado  |
 | 17 | Integração com scripts Netmiko/Paramiko         | em andamento                         | Integração com scripts Netmiko/Paramiko            |
 | 18 | Observabilidade (Zabbix/Graylog)                | em andamento                         | Observabilidade (Zabbix/Graylog)                   |
 
@@ -190,7 +190,8 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Dashboard Interativo - Monitoramento de Rede](https://alcancil.github.io/dashboards/10_interactive_filters.html)  
 - [Dashboard de Progresso CCNP - Métricas por Domínio](https://alcancil.github.io/dashboards/12_dashboard_progress.html)
 - [Git Log Dashboard — Análise de Commits CCNP](https://alcancil.github.io/dashboards/13_dashboard_git_log.html)
-- [Dashboard Completo CCNP ENCORE — 3 abas](https://alcancil.github.io/dashboards/15_dashboard_completo.html) ⭐ **NOVO**
+- [Dashboard Completo CCNP ENCORE — 3 abas](https://alcancil.github.io/dashboards/15_dashboard_completo.html)
+- [Dashboard Completo Modular CCNP ENCORE](https://alcancil.github.io/dashboards/16_dashboard_completo_modular.html) ⭐ **NOVO**
 
 **Base URL:** <https://alcancil.github.io/dashboards/>  
 
@@ -316,12 +317,13 @@ chore(deps): update plotly to 5.18.0
 ✓ Pipeline git log → CSV → Dashboard (script único) ⭐  
 ✓ Modularização do pipeline (extract.py + parser.py + orquestrador) ⭐  
 ✓ Dashboard completo com 3 abas (Resumo, Progresso CCNP, Git Log) ⭐  
-⎕ Métricas de negócio e KPIs  
+✓ Dashboard completo modularizado (scanner.py + orquestrador modular) ⭐  
+⎕ Métricas de progresso via API do GitHub  
 ⎕ Integração com scripts Netmiko/Paramiko  
 ⎕ Observabilidade (Zabbix/Graylog)  
 
-**Status:** 5/8 completo (62.5%) ✅  
-**Versão atual:** v0.13.0  
+**Status:** 6/8 completo (75%) ✅  
+**Versão atual:** v0.14.0  
 **Versão esperada:** v0.9.0 - v0.16.0  
 **Previsão:** Semanas 3-5
   
@@ -336,10 +338,10 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 31         |
-| Gráficos gerados      | 14         |
-| Commits profissionais | 28         |
-| Última atualização    | 02/03/2026 |
+| Scripts criados       | 35         |
+| Gráficos gerados      | 15         |
+| Commits profissionais | 30         |
+| Última atualização    | 03/03/2026 |
 
 ---  
 

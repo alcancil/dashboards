@@ -9,10 +9,35 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Dashboard completo modularizado — script 16 (versão modular do script 15)
-- Métricas de negócio e KPIs
-- Integração com scripts Netmiko/Paramiko
-- Observabilidade (Zabbix/Graylog)
+- Métricas de progresso via API do GitHub
+- GitHub Actions para atualização automática do dashboard
+
+---
+
+## [0.14.0] - 2026-03-03
+
+### Adicionado
+
+- Novo pacote `scripts/parsing/blueprint/` com responsabilidade única: leitura da estrutura de pastas do CCNP
+- `scripts/parsing/blueprint/__init__.py`: inicializa o pacote
+- `scripts/parsing/blueprint/scanner.py`: função `scan_blueprint()` extraída do script 15
+- `scripts/parsing/blueprint/scanner_commented.py`: versão didática com comentários detalhados
+- `DOMAIN_ORDER` e `DOMAIN_COLORS` centralizados em `scanner.py` — evita duplicação entre módulo e orquestrador
+- `SKIP_FOLDERS` como set (`{"Arquivos", "Imagens", "Simulado"}`) — lookup O(1) mais eficiente que lista
+- `src/avancado/16_dashboard_completo_modular.py`: orquestrador modular que importa `validate_repo`, `extract_git_log` de `extract.py`, `parse_lines`, `save_csv` de `parser.py` e `scan_blueprint`, `DOMAIN_ORDER`, `DOMAIN_COLORS` de `scanner.py`
+- `src/avancado/16_dashboard_completo_modular_commented.py`: versão didática com comparação explícita entre script 15 (monolítico) e script 16 (modular)
+
+### Alterado
+
+- README.md: item 16 concluído na tabela Fase 3, link GitHub Pages, roadmap 6/8 (75%), versão v0.14.0
+- CHANGELOG.md: [Unreleased] atualizado, entrada v0.14.0 adicionada
+
+### Documentação
+
+- Narrativa monolítico → modular: script 15 e 16 demonstram o princípio da responsabilidade única na prática
+- `scan_blueprint()` classificada como parsing porque lê uma estrutura (pastas) e transforma em dados estruturados (dicionário) — mesma responsabilidade semântica de `extract.py` e `parser.py`
+- `sys.path.insert(0, BASE_DIR)` no orquestrador: necessário para que o Python encontre o pacote `scripts/` como módulo importável
+- `DOMAIN_COLORS` e `DOMAIN_ORDER` importados do `scanner.py` em vez de redefinidos no orquestrador
 
 ---
 
