@@ -1,0 +1,24 @@
+{
+  "dashboards": {
+    "repo": "dashboards",
+    "full_name": "alcancil/dashboards",
+    "stars": 0,
+    "forks": 0,
+    "size_kb": 18090,
+    "created_at": "2025-10-11T14:49:30Z",
+    "pushed_at": "2026-03-04T14:54:52Z",
+    "open_issues": 0,
+    "default_branch": "main"
+  },
+  "cisco": {
+    "repo": "cisco",
+    "full_name": "alcancil/Cisco",
+    "stars": 14,
+    "forks": 1,
+    "size_kb": 100834,
+    "created_at": "2023-11-09T18:31:40Z",
+    "pushed_at": "2026-02-23T00:10:53Z",
+    "open_issues": 0,
+    "default_branch": "main"
+  }
+}

@@ -1,0 +1,34 @@
+repo,sha,date,week,month,weekday,message,type,scope
+dashboards,629e1ea,2026-03-04,2026-W09,2026-03,Wednesday,docs(readme): adiciona TOC e atualiza estrutura do projeto,docs,readme
+dashboards,b2ab3ce,2026-03-03,2026-W09,2026-03,Tuesday,feat(avancado): adiciona dashboard completo modular CCNP com scanner.py,feat,avancado
+dashboards,699612a,2026-03-02,2026-W09,2026-03,Monday,feat(avancado): adiciona dashboard completo CCNP com 3 abas,feat,avancado
+dashboards,66eccc5,2026-03-02,2026-W09,2026-03,Monday,docs(readme): corrige roadmap fase 3 - marca modularização como concluída,docs,readme
+dashboards,a4186b4,2026-03-02,2026-W09,2026-03,Monday,refactor(avancado): modulariza pipeline git log em módulos reutilizáveis,refactor,avancado
+dashboards,cf338ec,2026-03-01,2026-W08,2026-03,Sunday,feat(avancado): add pipeline git log → CSV → dashboard,feat,avancado
+dashboards,2782edb,2026-02-26,2026-W08,2026-02,Thursday,refactor(estrutura): reestrutura pastas para pipeline de dados,refactor,estrutura
+dashboards,ad370aa,2026-02-23,2026-W08,2026-02,Monday,chore(docs): ajustado o endereço do dashboard de progresso 12,chore,docs
+dashboards,4d65b3e,2026-02-23,2026-W08,2026-02,Monday,feat(avancado): adiciona dashboard de progresso CCNP v2 por acumulação,feat,avancado
+dashboards,61619a7,2026-02-23,2026-W08,2026-02,Monday,docs(readme): corrige roadmap da Fase 3 e versões esperadas,docs,readme
+dashboards,dca4441,2026-02-22,2026-W07,2026-02,Sunday,feat(interactive): adiciona gráfico interativo com filtros linkados de latência,feat,interactive
+dashboards,4df9439,2026-02-22,2026-W07,2026-02,Sunday,chore(deps): remove arquivo requerimentos.txt com nome incorreto,chore,deps
+dashboards,52cd873,2026-02-22,2026-W07,2026-02,Sunday,feat(dashboard): adiciona dashboard intermediário com 4 gráficos integrados,feat,dashboard
+dashboards,886c7bf,2026-02-20,2026-W07,2026-02,Friday,feat(timeline): adiciona cronograma de janelas de manutenção,feat,timeline
+dashboards,d9a5dbc,2026-02-20,2026-W07,2026-02,Friday,feat(gauge): adiciona medidores tipo velocímetro de banda para links de rede,feat,gauge
+dashboards,e2e73f1,2026-02-19,2026-W07,2026-02,Thursday,docs(readme): corrige percentual da Fase 2 do ROADMAP para 33%,docs,readme
+dashboards,ad8c950,2026-02-17,2026-W07,2026-02,Tuesday,feat(heatmap): adiciona mapa de calor de utilização de dispositivos,feat,heatmap
+dashboards,ab3b3a3,2026-02-14,2026-W06,2026-02,Saturday,docs(changelog): corrige estrutura e datas da v0.3.0,docs,changelog
+dashboards,cce4481,2026-02-13,2026-W06,2026-02,Friday,feat(scatter): adicionado gráfico de dispersão para análise de latência,feat,scatter
+dashboards,0cedcd0,2026-02-13,2026-W06,2026-02,Friday,docs: atualiza documentação com conclusão da Fase 1,docs,geral
+dashboards,4997c05,2026-02-13,2026-W06,2026-02,Friday,style(readme): corrige espaçamento na seção Fase 1 do roadmap,style,readme
+dashboards,d5e4774,2026-02-13,2026-W06,2026-02,Friday,docs(readme): atualiza documentação da Fase 1 como concluída,docs,readme
+dashboards,0fcc80c,2025-10-20,2025-W42,2025-10,Monday,feat(dashboard): adiciona Dashboard MVP com 4 gráficos integrados,feat,dashboard
+dashboards,055113d,2025-10-20,2025-W42,2025-10,Monday,docs: adiciona guia de versionamento semântico,docs,geral
+dashboards,fc2bcb3,2025-10-19,2025-W41,2025-10,Sunday,feat(deploy): enable GitHUB Pages for online visualization,feat,deploy
+dashboards,2cbbd6d,2025-10-19,2025-W41,2025-10,Sunday,feat(basico): add pie chart showing lab dustribution by category,feat,basico
+dashboards,ef7dfad,2025-10-18,2025-W41,2025-10,Saturday,feat(basico): add bar chart comparing CCNP domain labs,feat,basico
+dashboards,4285568,2025-10-18,2025-W41,2025-10,Saturday,docs(changelog): fix changelog formatting,docs,changelog
+dashboards,3c43cd7,2025-10-18,2025-W41,2025-10,Saturday,docs(readme): improve project structure section formatting,docs,readme
+dashboards,291557f,2025-10-12,2025-W40,2025-10,Sunday,feat(basics): add line chart with clean and commented versions,feat,basics
+dashboards,5c452d8,2025-10-11,2025-W40,2025-10,Saturday,docs(changelog): initialize changelog with v0.1.0 and semantic versioning structure,docs,changelog
+dashboards,5d519b2,2025-10-11,2025-W40,2025-10,Saturday,docs: add comprehensive git commit guidelines and examples,docs,geral
+dashboards,5761bb6,2025-10-11,2025-W40,2025-10,Saturday,chore(init): initialize project structure with gitignore and requirements,chore,init

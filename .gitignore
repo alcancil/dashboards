@@ -24,3 +24,11 @@ data/temp/
 
 # Outputs HTML temporários
 docs/temp/
+
+# Variáveis de ambiente — NUNCA commitar
+.env
+.env.*
+*.env
+
+# Dados brutos — regeneráveis via scripts/collectors/github_api.py
+data/raw/
