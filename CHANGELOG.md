@@ -9,8 +9,52 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Em Desenvolvimento
 
-- Métricas de progresso via API do GitHub
-- GitHub Actions para atualização automática do dashboard
+- GitHub Actions — atualização automática do dashboard (Fase 4)
+- Deploy automático do dashboard
+- Testes automatizados
+- Migração do token para GitHub Actions Secrets (segurança Nível 3)
+
+---
+
+## [0.15.0] - 2026-03-04
+
+### Adicionado
+
+- Novo pacote `scripts/collectors/` com responsabilidade única: coleta de dados externos via API
+- `scripts/collectors/__init__.py`: inicializa o pacote collectors
+- `scripts/collectors/github_api.py`: coleta commits, info e estatísticas dos dois repositórios via API REST do GitHub
+- `scripts/collectors/github_api_commented.py`: versão didática com documentação sobre níveis de segurança (Nível 1 → Nível 3)
+- Novo pacote `scripts/parsing/github/` com responsabilidade única: processamento dos dados da API
+- `scripts/parsing/github/__init__.py`: inicializa o pacote github
+- `scripts/parsing/github/processor.py`: transforma JSON bruto em DataFrames e CSVs estruturados
+- `scripts/parsing/github/processor_commented.py`: versão didática com explicação do pipeline e decisões de design
+- `src/avancado/17_github_metrics.py`: orquestrador com dashboard de 4 abas (Visão Geral, DASHBOARDS, CISCO, Correlação)
+- `src/avancado/17_github_metrics_commented.py`: versão comentada com narrativa de portfólio
+- `data/processed/commits_dashboards.csv`: série temporal de commits do repositório DASHBOARDS
+- `data/processed/commits_cisco.csv`: série temporal de commits do repositório CISCO (2369 commits, 63 semanas)
+- `data/processed/commits_all.csv`: dataset combinado dos dois repositórios para análise de correlação
+- `data/processed/repo_info.json`: metadados dos repositórios (stars, forks, datas, tamanho)
+- `docs/17_github_metrics.html`: dashboard com correlação entre os dois repositórios
+
+### Alterado
+
+- `.gitignore`: adicionado `data/raw/` — JSONs brutos são regeneráveis, não versionados
+- `requirements.txt`: adicionado `requests` e `python-dotenv`
+- README.md: item 17 concluído, estrutura atualizada, roadmap 7/8 (87.5%), versão v0.15.0
+- CHANGELOG.md: [Unreleased] atualizado, entrada v0.15.0 adicionada
+
+### Segurança
+
+- Nível 1 implementado: token via `.env` + `.gitignore` (didático — narrativa de evolução)
+- `data/raw/` ignorado pelo git — JSONs brutos nunca versionados (boas práticas de engenharia de dados)
+- Próximo passo documentado: migrar para GitHub Actions Secrets (Nível 3) na Fase 4
+
+### Documentação
+
+- Estratégia de persistência: arquivo com timestamp (`github_api_YYYYMMDD_HHMMSS.json`) + `_latest` fixo
+- Paginação automática: `_get_paginated()` percorre todas as páginas da API (repositório CISCO tem 2369 commits)
+- `main()` inteligente: verifica se CSVs já existem antes de chamar a API — economiza rate limit
+- Separação clara entre coleta (`collectors/`), processamento (`parsing/github/`) e visualização (`src/avancado/`)
 
 ---
 

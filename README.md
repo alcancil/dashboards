@@ -78,9 +78,15 @@ dashboards/
 │       ├── 15_dashboard_completo.py                  # Dashboard 3 abas monolítico (limpo)
 │       ├── 15_dashboard_completo_commented.py        # Dashboard 3 abas monolítico (comentado)
 │       ├── 16_dashboard_completo_modular.py          # Dashboard 3 abas modular (limpo)
-│       └── 16_dashboard_completo_modular_commented.py# Dashboard 3 abas modular (comentado)
+│       ├── 16_dashboard_completo_modular_commented.py# Dashboard 3 abas modular (comentado)
+│       ├── 17_github_metrics.py                      # Dashboard métricas GitHub 4 abas (limpo)
+│       └── 17_github_metrics_commented.py            # Dashboard métricas GitHub (comentado)
 │
 ├── scripts/                                          # 🔧 Scripts de pipeline de dados
+│   ├── collectors/                                   # Coleta de dados externos via API
+│   │   ├── __init__.py                               # Inicializa o pacote collectors
+│   │   ├── github_api.py                             # Coleta commits dos dois repos via API REST (limpo)
+│   │   └── github_api_commented.py                   # Coleta via API (comentado — níveis de segurança)
 │   └── parsing/                                      # Transformação de dados brutos
 │       ├── git_log/                                  # Módulos de extração e parsing do git log
 │       │   ├── __init__.py                           # Inicializa o pacote git_log
@@ -88,17 +94,25 @@ dashboards/
 │       │   ├── extract_commented.py                  # Extração (comentado)
 │       │   ├── parser.py                             # Parsing e geração do CSV (limpo)
 │       │   └── parser_commented.py                   # Parsing (comentado)
-│       └── blueprint/                                # Módulos de leitura da estrutura CCNP
-│           ├── __init__.py                           # Inicializa o pacote blueprint
-│           ├── scanner.py                            # scan_blueprint() — lê pastas do CCNP (limpo)
-│           └── scanner_commented.py                  # scan_blueprint() (comentado)
+│       ├── blueprint/                                # Módulos de leitura da estrutura CCNP
+│       │   ├── __init__.py                           # Inicializa o pacote blueprint
+│       │   ├── scanner.py                            # scan_blueprint() — lê pastas do CCNP (limpo)
+│       │   └── scanner_commented.py                  # scan_blueprint() (comentado)
+│       └── github/                                   # Módulos de processamento da API GitHub
+│           ├── __init__.py                           # Inicializa o pacote github
+│           ├── processor.py                          # Transforma JSON bruto em CSVs estruturados (limpo)
+│           └── processor_commented.py                # Processamento (comentado — pipeline explicado)
 │
 ├── data/                                             # 📊 Dados organizados por estágio
-│   ├── raw/                                          # Dados brutos (imutáveis — nunca editar)
-│   │   └── raw_git_log.txt                           # Snapshot do histórico git
+│   ├── raw/                                          # Dados brutos — NÃO versionados (.gitignore)
+│   │                                                 # Regenerar: python scripts/collectors/github_api.py
 │   ├── processed/                                    # Dados tratados pelos scripts
 │   │   ├── ccnp_progress.json                        # Progresso CCNP por domínio
-│   │   └── git_log.csv                               # Commits processados e categorizados
+│   │   ├── git_log.csv                               # Commits processados e categorizados
+│   │   ├── commits_dashboards.csv                    # Série temporal — repositório DASHBOARDS
+│   │   ├── commits_cisco.csv                         # Série temporal — repositório CISCO
+│   │   ├── commits_all.csv                           # Dataset combinado para correlação
+│   │   └── repo_info.json                            # Metadados dos repositórios (stars, forks, datas)
 │   └── external/                                     # Dados de APIs externas (Fase 4)
 │
 ├── docs/                                             # 📄 Outputs HTML e documentação
@@ -117,6 +131,7 @@ dashboards/
 │   ├── 14_dashboard_git_log_modular.html             # Output: Dashboard Git Log Modular
 │   ├── 15_dashboard_completo.html                    # Output: Dashboard Completo 3 abas
 │   ├── 16_dashboard_completo_modular.html            # Output: Dashboard Completo Modular
+│   ├── 17_github_metrics.html                        # Output: GitHub Metrics — correlação dos repos
 │   ├── git_commit_guide.md                           # Guia de commits profissionais
 │   ├── guia_versionamento.md                         # Guia de versionamento semântico
 │   └── .nojekyll                                     # Configuração GitHub Pages
@@ -155,7 +170,7 @@ dashboards/
 | 09 | Dashboard            | `09_dashboard_intermediario.html` | Dashboard intermediário        |
 | 10 | Gráficos interativos | `10_interactive_filters.html`     | filtros, zoom, seleção         |
 
-#### Fase 3 - Avançado (🔄 6/8 em andamento)
+#### Fase 3 - Avançado (🔄 7/8 em andamento)
 
 | #  | Tipo                                            | Arquivo                                | Descrição                                          |
 |----|-------------------------------------------------|----------------------------------------|----------------------------------------------------|
@@ -165,7 +180,7 @@ dashboards/
 | 14 | Modularização do pipeline                       | `14_git_log_modular.py`                | Separa script 13 em módulos reutilizáveis          |
 | 15 | Dashboard completo com múltiplas páginas        | `15_dashboard_completo.py`             | Dashboard com 3 abas: Resumo, Progresso, Git Log   |
 | 16 | Dashboard completo modularizado                 | `16_dashboard_completo_modular.py`     | Versão modular do script 15 — scanner.py separado  |
-| 17 | Métricas de progresso via API do GitHub         | em andamento                           | Coleta automática de dados via API GitHub          |
+| 17 | Métricas GitHub — sistema de evolução           | `17_github_metrics.py`                 | Coleta API + processamento + dashboard 4 abas      |
 | 18 | GitHub Actions — atualização automática         | em andamento                           | Pipeline automático de geração do dashboard        |
 
 ### 🎨 Padrão de Organização
@@ -256,7 +271,8 @@ Os gráficos estão disponíveis online via GitHub Pages:
 - [Dashboard de Progresso CCNP](https://alcancil.github.io/dashboards/12_dashboard_progress.html)
 - [Git Log Dashboard — Análise de Commits CCNP](https://alcancil.github.io/dashboards/13_dashboard_git_log.html)
 - [Dashboard Completo CCNP ENCORE — 3 abas](https://alcancil.github.io/dashboards/15_dashboard_completo.html)
-- [Dashboard Completo Modular CCNP ENCORE](https://alcancil.github.io/dashboards/16_dashboard_completo_modular.html) ⭐ **NOVO**
+- [Dashboard Completo Modular CCNP ENCORE](https://alcancil.github.io/dashboards/16_dashboard_completo_modular.html)
+- [GitHub Metrics — Sistema de Evolução CCNP](https://alcancil.github.io/dashboards/17_github_metrics.html) ⭐ **NOVO**
 
 ---
 
@@ -287,8 +303,10 @@ Contém todos os scripts Python organizados por nível de complexidade:
 
 Scripts responsáveis pela transformação e geração de dados, organizados em pacotes Python:
 
+- **collectors/**: Coleta de dados externos via API (`github_api.py` — API REST do GitHub)
 - **parsing/git_log/**: Extrai e processa o histórico git (`extract.py` + `parser.py`)
 - **parsing/blueprint/**: Lê a estrutura de pastas do repositório CCNP (`scanner.py`)
+- **parsing/github/**: Processa os dados da API GitHub em CSVs de série temporal (`processor.py`)
 - Cada pacote possui versão limpa e comentada de seus módulos
 
 **data/ - Dados**  
@@ -383,11 +401,11 @@ chore(deps): update plotly to 5.18.0
 ✓ Modularização do pipeline (extract.py + parser.py + orquestrador) ⭐  
 ✓ Dashboard completo com 3 abas (Resumo, Progresso CCNP, Git Log) ⭐  
 ✓ Dashboard completo modularizado (scanner.py + orquestrador modular) ⭐  
-⎕ Métricas de progresso via API do GitHub  
+✓ Métricas GitHub — coleta API + processamento + dashboard correlação ⭐  
 ⎕ GitHub Actions — atualização automática do dashboard  
 
-**Status:** 6/8 completo (75%) ✅  
-**Versão atual:** v0.14.0  
+**Status:** 7/8 completo (87.5%) ✅  
+**Versão atual:** v0.15.0  
 **Versão esperada:** v0.9.0 - v0.16.0  
 **Previsão:** Semanas 3-5
   
@@ -402,10 +420,10 @@ chore(deps): update plotly to 5.18.0
 
 | Métrica               | Valor      |
 |-----------------------|------------|
-| Scripts criados       | 35         |
-| Gráficos gerados      | 15         |
-| Commits profissionais | 30         |
-| Última atualização    | 03/03/2026 |
+| Scripts criados       | 39         |
+| Gráficos gerados      | 16         |
+| Commits profissionais | 32         |
+| Última atualização    | 04/03/2026 |
 
 ---  
 
